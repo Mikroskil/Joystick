@@ -3,6 +3,7 @@ body
 	background-image:url("../img/bg-body.png");
 	background-repeat:repeat;
 	color:#333333;
+	
 }
 
 a
@@ -10,6 +11,7 @@ a
 	color:#000000;
 	text-decoration:none;
 }
+
 
 .wrapper
 {
@@ -80,7 +82,7 @@ a
 }
 /*End of Footer Section*/
 
-/*main.html Section*/
+/*Container Section*/
 .container
 {
 	width:980px;
@@ -88,39 +90,18 @@ a
 	padding:10px;
 }
 
-.slideshow
-{
-	width:1000px;
-	margin-left:-40px;
-	display:block;
-	list-style:none;
-}
-
-.slides
-{
-	width:100%;
-	margin-left:-40px;
-	float:left;
-	display:list-item;
-}
-
 .section
 {
-	border-bottom:solid thin #EEEEEE;
+	border-bottom:solid thin #CCCCCC;
 	float:left;
 	padding:5px;
-}
-
-.indexnewssec
-{
-	width:450px;
 }
 
 .sectionheader
 {
 	width:100%;
 	padding:5px;
-	background-color:#DDDDDD;
+	background-color:#EEEEEE;
 	height:20px;
 	margin-left:-5px;
 	margin-top:-5px;
@@ -139,11 +120,101 @@ a
 	margin-left:-5px;
 	color:#666666;
 }
+/*End of Container Section*/ 
+
+/*main.html Section*/
+.slideshow
+{
+	width:1000px;
+	margin-left:-40px;
+	display:block;
+	list-style:none;
+}
+
+.slides
+{
+	width:100%;
+	margin-left:-40px;
+	float:left;
+	display:list-item;
+}
+
+.indexnewssec
+{
+	width:600px;
+	
+}
 
 .indexnewsseccon
 {
 	height:150px;
+	float:left;
+	width:270px;
+	margin:10px;
 }
 /*End of main.html Section*/
 
+/*apartment.html Section*/
+.floorplanimg
+{
+	width:1100px;
+	height:500px;
+	margin-left:-50px;
+	margin-top:10px;
+	display:block;
+}
 
+.apartmentsec
+{
+	width:600px;
+	margin-right:10px;
+}
+
+.apartmentseccon
+{
+	width:350px;
+	margin:10px 5px 10px 10px;
+	float:left;
+	padding:5px;
+	height:200px;
+}
+
+.apartmentsecimg
+{
+	width:200px;
+	margin:10px 5px 10px 10px;
+	float:left;
+	padding:5px;
+	height:200px;
+}
+
+.saleapartmentsec
+{
+	width:350px;
+	padding:5px;
+	
+}
+
+.saleaparmentimg
+{
+	width:100px;
+	height:100px;
+	margin-right:10px;
+}
+
+.saleaparmentcondet
+{
+	width:220px;
+	height:140px;
+	margin-right:10px;
+	padding:5px;
+	float:left;
+}
+
+.saleapartmentseccon
+{
+	height:150px;
+	margin-bottom:5px;
+}
+
+/*End of apartment.html Section*/
