@@ -42,14 +42,22 @@ a
 	padding:5px;
 	float:left;
 	border-left:thin solid #000000;
-	background-image:url("../img/bg-hnmenu.png");
-	color:#000000;
+	background-image:url(../img/button.png);
+	color:#FFFFFF;
+}
+
+.headernavmenu:hover
+{
+	text-decoration:overline;
 }
 
 .headerlogo
 {
+	background-image:url(../img/head.png);
 	width:100%;
+	height:150px;
 	padding:15px;
+	background-repeat:no-repeat;
 }
 /*End of Header Section*/
 
