@@ -132,10 +132,15 @@ a
 /*End of Container Section*/ 
 
 /*main.html Section*/
+.slider
+{
+	margin-top:5px;
+	margin-bottom:5px;
+	height:300px;
+}
 .slideshow
 {
 	width:1000px;
-	margin-left:-40px;
 	display:block;
 	list-style:none;
 }
@@ -148,6 +153,11 @@ a
 	display:list-item;
 }
 
+.slideimg
+{
+	width:1000px;
+	height:300px;
+}
 .indexnewssec
 {
 	width:600px;
@@ -170,9 +180,9 @@ a
 /*apartment.html Section*/
 .floorplanimg
 {
-	width:1100px;
+	width:1300px;
 	height:500px;
-	margin-left:-50px;
+	margin-left:-150px;
 	margin-top:10px;
 	display:block;
 }
@@ -239,3 +249,37 @@ a
 }
 
 /*End of about_us.html Section*/
+/*news.html Section*/
+.newsseccon
+{
+	width:700px;
+}
+.newssec
+{
+	width:215px;
+	margin-right:10px;
+	margin-bottom:5px;
+	height:230px;
+	float:left;
+}
+.newshead
+{
+	width:205px;
+	font-weight:300;
+	padding:5px;
+}
+.newsimg
+{
+	height:70px;
+	margin:5px 0px 5px 0px;
+}
+.newscon
+{
+	width:205px;
+	padding:5px;
+	height:100px;
+	border-left: solid thin #DDDDDD;
+}
+
+
+/*End of news.html Section*/
