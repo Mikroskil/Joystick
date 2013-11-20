@@ -25,7 +25,21 @@ a
 .signinbut
 {
 	border-radius:5px;
-	font-weight:bold;
+	border:solid thin #DDDDDD;
+	font-weight:400;
+	height:30;
+	/* fallback */
+    background-color:#DDDDDD;
+    /* Safari 4-5, Chrome 1-9 */
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFFFFF), to(#DDDDDD));
+    /* Safari 5.1, Chrome 10+ */
+    background: -webkit-linear-gradient(bottom, #DDDDDD, #FFFFFF);
+    /* Firefox 3.6+ */
+    background: -moz-linear-gradient(bottom, #DDDDDD, #FFFFFF);
+    /* IE 10 */
+    background: -ms-linear-gradient(bottom, #DDDDDD, #FFFFFF);
+    /* Opera 11.10+ */
+    background: -o-linear-gradient(bottom, #DDDDDD, #FFFFFF);
 }
 /*Header Section*/
 .header
@@ -64,31 +78,30 @@ a
 
 .headerlogin
 {
-	margin:10px 0px 0px -5px;
+	margin:5px 0px 0px -5px;
 	width:inherit;
 	padding:5px;
-	visibility:hidden;
+	display:none;
 }
 
-.headerloginhover
+.headernavmenu:hover .headerlogin
 {
-	margin:10px 0px 0px -5px;
-	background-color:#FFFFFF;
-	width:300px;
+	margin:5px 0px 0px -5px;
 	padding:5px;
+	width:200px;
+	height:160px;
 	box-shadow: 0px 0px 5px #888888;
-	border-radius:5px 5px 5px 5px;
-	visibility:visible;
+	border-radius:0px 5px 5px 5px;
 	display:block;
-	height:150px;
+	background-color:#FFFFFF;
 	color:#777777;
 	text-align:left;
 }
 
-.hltextfocus
+.hltextfocus:focus
 {
 	color:#CCCCCC;
-	box-shadow: 0px 0px 5px #0000FF;
+	box-shadow: 0px 0px 8px #52A8FF;
 }
 /*End of Header Section*/
 
