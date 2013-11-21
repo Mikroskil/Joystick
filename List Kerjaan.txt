@@ -1,3 +1,5 @@
 Koreksi bagian About us, ubah isi na, jangan gitu simpel cuma anggota aja, coba cari referensi about us di website lain
 
-Buat html news and events
+ganti header di tiap html jadi pake include
+
+buat form login dan database
