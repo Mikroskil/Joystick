@@ -1,11 +1,11 @@
 <html>
 	<head>
-		<title>Suvawebe</title>
+		<title>SUVABEWE | Apartment</title>
 		<link rel="stylesheet" href="../css/templates.css" type="text/css" />
 	</head>
 	<body>
 		<div class="wrapper" id="wrapper">
-			<?php include "header.php"?>
+			<?php include_once ('header.php');?>
 			<div>
 					<img class="floorplanimg"  src="../img/1_first_floor.jpg"  />
 			</div>
@@ -134,7 +134,7 @@
 					</div>
 				</div>
 			</div>
-			<?php include "footer.html"?>
+			<?php include_once ('footer.html');?>
 		</div>
 	</body>
 </html>

@@ -10,7 +10,7 @@
 						<a href="contact_us.php"><li class="headernavmenu">Contact Us</li></a>
 						
 						<li class="headernavmenu">
-							<a href="login.html" style="color:#FFFFFF">Login</a>
+							<a href="login.php" style="color:#FFFFFF">Login</a>
 							<div class="headerlogin" id="headerlogin">
 								<form>
 									<label>Apartment Number or E-mail</label> <br />

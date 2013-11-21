@@ -1,11 +1,11 @@
 <html>
 	<head>
-		<title>Suvawebe</title>
+		<title>SUVABEWE | News and Events</title>
 		<link rel="stylesheet" href="../css/templates.css" type="text/css" />
 	</head>
 	<body>
 		<div class="wrapper" id="wrapper">
-			<?php include "header.php"?>
+			<?php include_once ('header.php');?>
 			<div class="container" style="height:900px">
 				<div class="section newsseccon">
 					<div class="sectionheader bottomline">
@@ -58,7 +58,7 @@
 					</div>
 				</div>
 			</div>
-			<?php include "footer.html"?>
+			<?php include_once ('footer.html');?>
 		</div>
 	</body>
 </html>
