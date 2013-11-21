@@ -3,11 +3,11 @@
 				<div class="headerlogo"></div>
 				<div class="headernav">
 					<ul style="margin-left:-40px">
-						<a href="main.html"><li class="headernavmenu">Home</li></a>
-						<a href="about_us.html"><li class="headernavmenu">About Us</li></a>
-						<a href="apartment.html"><li class="headernavmenu">Apartement</li></a>
-						<a href="news.html"><li class="headernavmenu">News And Events</li></a>
-						<a href="contact_us.html"><li class="headernavmenu">Contact Us</li></a>
+						<a href="main.php"><li class="headernavmenu">Home</li></a>
+						<a href="about_us.php"><li class="headernavmenu">About Us</li></a>
+						<a href="apartment.php"><li class="headernavmenu">Apartement</li></a>
+						<a href="news.php"><li class="headernavmenu">News And Events</li></a>
+						<a href="contact_us.php"><li class="headernavmenu">Contact Us</li></a>
 						
 						<li class="headernavmenu">
 							<a href="login.html" style="color:#FFFFFF">Login</a>
