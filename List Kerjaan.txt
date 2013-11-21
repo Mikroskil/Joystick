@@ -1,5 +1,16 @@
-Koreksi bagian About us, ubah isi na, jangan gitu simpel cuma anggota aja, coba cari referensi about us di website lain
-
 ganti header di tiap html jadi pake include
 
 buat form login dan database
+
+SL:
+Database
+Table kamar
+-no kamar
+-password
+-nama pemilik
+-email address
+-terisi atau tidak (boolean)
+-tagihan listrik
+-tagihan air
+
+
