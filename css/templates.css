@@ -84,6 +84,7 @@ a
 	width:inherit;
 	padding:5px;
 	display:none;
+	position:fixed;
 }
 
 .headernavmenu:hover .headerlogin
