@@ -45,6 +45,8 @@ a
 .header
 {
 	width:1000px;
+	z-index:3;
+	position:static;
 }
 
 .headernav
@@ -96,6 +98,7 @@ a
 	background-color:#FFFFFF;
 	color:#777777;
 	text-align:left;
+	z-index:100;
 }
 
 .hltextfocus:focus
@@ -198,12 +201,14 @@ a
 	margin-left:-40px;
 	float:left;
 	display:list-item;
+	
 }
 
 .slideimg
 {
 	width:1000px;
 	height:300px;
+
 }
 .indexnewssec
 {

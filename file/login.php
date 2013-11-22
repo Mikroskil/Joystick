@@ -26,11 +26,11 @@
 							</tr>
 							<tr>
 								<td>&nbsp;</td>
-								<td><input type="submit" class="signinbut" value="Sign In"> <a href="register.php"><input type="button" class="signinbut" value="Sign Up"></a><br></td>
+								<td><input type="submit" class="signinbut" value="Sign In"></td>
 							</tr>
 							<tr> <td>&nbsp;</td></tr>
 							<tr>
-								<td> &nbsp;</td>
+								<td>&nbsp; </td>
 								<td><span> Forget Password? </span></td>
 							</tr>
 						</form>

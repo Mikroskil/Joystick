@@ -6,15 +6,15 @@
 	<body>
 		<div class="wrapper" id="wrapper">
 			<?php include_once ('header.php');?>
-			<div class = "container" style="height:700px">
+			<div class = "container" style="height:710px">
 				<div class="section aboutsec">
-					<b>About SUVABEWE</b><br />
-				</div>
-				<div class="aboutsec">
-					<h2>What is this website about?</h2>
-					This website will help giving you information when you want to purchase apartments without you going to the apartments to make a survey.<br>
-					<h2>How does it help you?</h2>
-					We will survey it for you and we will post it to this website every single detail about the apartments you will purchase. The room detail, the view, the floorplan, everything. We also provide pre-booking if you want to book it earlier before someone else grabs it.<br><br><br>
+					<div class="sectionheader"><b>About SUVABEWE</b><br /></div>
+					<div class="sectioncontent aboutsec">
+						<h2>What is this website about?</h2>
+						This website will help giving you information when you want to purchase apartments without you going to the apartments to make a survey.<br>
+						<h2>How does it help you?</h2>
+						We will survey it for you and we will post it to this website every single detail about the apartments you will purchase. The room detail, the view, the floorplan, everything. We also provide pre-booking if you want to book it earlier before someone else grabs it.<br><br><br>
+					</div>
 				</div>
 				<div class="section profilesec">
 					<div class="sectionheader">
