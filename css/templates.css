@@ -3,7 +3,8 @@ body
 	background-image:url("../img/bg-body.png");
 	background-repeat:repeat;
 	color:#333333;
-	font:Arial, Helvetica, sans-serif;
+	font-family:"Cambria";
+	font-size:16px;
 }
 
 a
@@ -157,7 +158,10 @@ a
 {
 	width:100%;
 	padding:5px;
-	height:20px;
+	height:30px;
+	font-family:"Bodoni MT";
+	font-size:20px;
+	font-style:italic;
 	margin-left:-5px;
 	margin-top:-5px;
 }
@@ -356,3 +360,40 @@ a
 }
 
 /*End of login.html section*/
+
+/*addapt.php & editapt.php section*/
+.aptsec
+{
+	width:700px;
+	margin-left:70px;
+	margin-top:30px;
+	height:auto;
+}
+.aptspace
+{
+	padding-left:10px;
+	margin-top:30px;
+	text-align:left;
+	font-size:20px;
+}
+/*end of addapt.php & editapt.php section*/
+
+/*adminsidemnu.php section*/
+.adminsidemenu
+{
+	padding-top:2px;
+	padding-top:2px;
+	font-size:17px;
+	height:135px;
+	width:inherit;
+	background-color:#CCCCCC;
+	border-color:#000099;
+}
+/*end of adminsidemenu.php section*/
+
+/*admin.php section*/
+.showapt
+{
+	width:auto;
+}
+/*end of admin.php section*/
