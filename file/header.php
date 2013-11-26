@@ -13,7 +13,7 @@
 							<a href="login.php" style="color:#FFFFFF">Login</a>
 							<div class="headerlogin" id="headerlogin">
 								<form>
-									<label>Apartment Number or E-mail</label> <br />
+									<label">Apartment Number or E-mail</label> <br />
 									<input type="text" class="hltextfocus"/><br />
 									<br />
 									<label>Password</label> <br />

@@ -6,8 +6,9 @@
 	<body>
 		<div class="wrapper" id="wrapper">
 			<?php include_once ('header.php');?>
-			<div class="container" style="height:900px">
-				<?php include_once('sidemenu.php');?>
+			<?php include_once('sidemenu.php');?>
+			<div class="container confmargin" style="height:900px">
+				
 				<div class="section aptsec">
 					<div class="sectionheader bottomline">
 						<b>Admin Page | Add Data Apartemen</b>
@@ -67,7 +68,7 @@
 							<td> <textarea name="spekapt"> </textarea></td>
 						</tr>
 						<tr>
-							<td> &nbsp;</td>
+							<td>&nbsp; </td>
 							<td rowspan="2"><input type="submit" value="Add"/> <input type="reset" value="Reset"></td>
 						</tr>
 						</form>							

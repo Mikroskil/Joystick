@@ -7,8 +7,9 @@
 	<body>
 		<div class="wrapper" id="wrapper">
 			<?php include_once ('header.php');?>
-			<div class="container" style="height:900px">
-				<?php include_once('sidemenu.php');?>
+			<?php include_once('sidemenu.php');?>
+			<div class="container confmargin" style="height:900px">
+				
 				<div class="section showapt">
 					<div class="sectionheader bottomline">
 						<b>Admin Page | Show Data Apartment</b>
@@ -17,37 +18,35 @@
 						<table>
 							<form method="post">
 								<tr>
-									<td width="50px"> ID </td>
-									<td width="100px"> Foto </td>
-									<td width="50px"> Unit </td>
-									<td width="50px"> Tipe </td>
-									<td width="150px"> Alamat </td>
+									<td width="80px"> No Kamar </td>
+									<td width="100px"> Tipe </td>
+									<td width="150px"> Harga </td>
+									<td width="150px"> Booking Fee </td>
 									<td width="50px"> Status </td>
-									<td width="120px"> Harga </td>
-									<td width="120px"> Booking Fee </td>
-									<td width="50px"> Masa </td>
-									<td width="100px"> Spef </td>
+									<td width="120px">Pemilik</td>
+									<td width="150px"> Spef </td>
+									<td width="100px"> Available </td>
 								</tr>
 								
 								<tr>
-									<td> bla-bla </td>
-									<td> Foto </td>
-									<td> unit </td>
-									<td> Tipe </td>
-									<td> Jl. Asia Baru No. 8 </td>
-									<td> Booked </td>
-									<td> Rp. 500.000.000,- </td>
-									<td> Rp. 25.000.000,-</td>
-									<td> 30 hari</td>
-									<td> blablabla </td>
+									<td> 1XX </td>
+									<td> C </td>
+									<td> Rp. 500.000.000,00 </td>
+									<td> Rp. 25.000.000,00 </td>
+									<td> Sold/Booked/Vacant </td>
+									<td> Sandy Usman Erry</td>
+									<td> 3 kamar tidur <br> 1 kamar mandi <br> bla bla bla</td>
+									<td> Yes/No </td>
 								</tr>
 							</form>
 						</table>
 					</div>
 				</div>
 			</div>
+			
 			<?php include_once ('footer.html');?>
 		</div>
+		
 	</body>
 </html>
 </html>

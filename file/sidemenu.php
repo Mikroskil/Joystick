@@ -1,5 +1,5 @@
 <div class="adminsidemenu">
-	<ul type="circle">
+	<ul type="disc">
 		<li><a href="addapt.php"> Add Data Apartemen</a><br /></li>
 		<li><a href="admin.php"> Edit Data Apartemen</a><br /></li>
 		<li><a href="adduser.php"> Add Data User </a><br></li>

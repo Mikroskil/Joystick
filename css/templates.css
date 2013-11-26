@@ -92,7 +92,7 @@ a
 {
 	margin:5px 0px 0px -5px;
 	padding:5px;
-	width:200px;
+	width:220px;
 	height:160px;
 	box-shadow: 0px 0px 5px #888888;
 	border-radius:0px 5px 5px 5px;
@@ -378,16 +378,29 @@ a
 }
 /*end of addapt.php & editapt.php section*/
 
+/*Admin General Section*/
+.confmargin
+{
+	margin-top:-135px;
+}
+/*End of Admin General Section*/
 /*adminsidemnu.php section*/
 .adminsidemenu
 {
 	padding-top:2px;
 	padding-top:2px;
-	font-size:17px;
+	font-size:16px;
 	height:135px;
-	width:inherit;
+	width:200px;
 	background-color:#CCCCCC;
 	border-color:#000099;
+	position:relative;
+	display:block;
+	top:0px;
+	left:1010px;
+	
+	box-shadow:5px 0px 5px #888888;
+
 }
 /*end of adminsidemenu.php section*/
 
