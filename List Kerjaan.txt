@@ -1,16 +1,9 @@
-ganti header di tiap html jadi pake include
-
-buat form login dan database
-
 SL:
-Database
-Table kamar
--no kamar
--password
--nama pemilik
--email address
--terisi atau tidak (boolean)
--tagihan listrik
--tagihan air
+-Login
+-atur php untuk slide di main.php
+-html buat user
+
+
+
 
 
