@@ -32,9 +32,12 @@
 						for ( $i = 0 ; $i < $n ; $i++)
 						{
 							echo "<div class='sectioncontent newssec'>";
-							echo "<div class='newshead'><a href='newscontent.html?'>" . $berita[$i]["judul"] . "</a></div>";
-							echo "<img class='newsimg' src='../img/" . $berita[$i]["gambar"]." />";
-							echo "<div class='newscon'>". $berita[$i]["isi"] . "</div>";
+							echo "<div class='newshead'><a href='newscontent.php?title=" . $berita[$i]['judul'] ."'>" . $berita[$i]['judul'] . "</a></div>";
+							if ($berita[$i]['gambar'] != "")
+							{
+								echo "<img class='newsimg' src='../img/" . $berita[$i]['gambar']." />";
+							}
+							echo "<div class='newscon'>". $berita[$i]['isi'] . "</div></div>";
 						}
 						
 					?>
