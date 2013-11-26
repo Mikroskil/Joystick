@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 26, 2013 at 04:54 PM
+-- Generation Time: Nov 26, 2013 at 01:44 AM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -64,14 +64,6 @@ CREATE TABLE IF NOT EXISTS `berita` (
   `tanggal` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `berita`
---
-
-INSERT INTO `berita` (`gambar`, `judul`, `isi`, `tanggal`) VALUES
-('', 'Test12355555', 'TestHoam', '2013-11-26'),
-('', 'Grand Opening Apartemen', 'Pembukaan bla2\r\nbla2\r\nbla2\r\nbla2\r\nbla2\r\nbla2', '2013-11-26');
-
 -- --------------------------------------------------------
 
 --
@@ -81,17 +73,6 @@ INSERT INTO `berita` (`gambar`, `judul`, `isi`, `tanggal`) VALUES
 CREATE TABLE IF NOT EXISTS `fasilitas` (
   `gambar` text NOT NULL,
   `ketarangan` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `slide`
---
-
-CREATE TABLE IF NOT EXISTS `slide` (
-  `gambar` text NOT NULL,
-  `pagelink` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
