@@ -3,6 +3,20 @@
 	<head>
 		<title>SUVABEWE | Admin Page</title>
 		<link rel="stylesheet" href="../css/templates.css" type="text/css" />
+		<?php
+		$connect=mysql_connect("localhost", "root", "");
+		mysql_select_db("suvabewe", $connect);
+		$pilihtabel=mysql_query("SELECT * FROM apartemen");
+		
+		while($row=mysql_fetch_array ($pilihtabel))
+		{
+			if(isset($_POST [$row['no_kamar']]))
+			{
+				$temp=$row['no_kamar'];
+				mysql_query("DELETE FROM apartemen WHERE no_kamar='$temp'");
+			}
+		}
+		?>
 	</head>
 	<body>
 		<div class="wrapper" id="wrapper">
@@ -28,16 +42,52 @@
 									<td width="100px"> Available </td>
 								</tr>
 								
-								<tr>
-									<td> 1XX </td>
-									<td> C </td>
-									<td> Rp. 500.000.000,00 </td>
-									<td> Rp. 25.000.000,00 </td>
-									<td> Sold/Booked/Vacant </td>
-									<td> Sandy Usman Erry</td>
-									<td> 3 kamar tidur <br> 1 kamar mandi <br> bla bla bla</td>
-									<td> Yes/No </td>
-								</tr>
+								<?php
+									$connect=mysql_connect("localhost", "root", "");
+									mysql_select_db("suvabewe",$connect);
+									$pilihtabel=mysql_query("SELECT * FROM apartemen");
+									
+									
+									$i=0;
+									while(($row=mysql_fetch_array($pilihtabel)))
+									{
+										$temp1=$row['available'];
+										$temp2=$row['booked'];
+										$i = $i + 1;
+										
+										echo 
+										"<tr> 
+										<td> " . $row['no_kamar'] . "</td>
+										<td> " . $row['type_kamar'] . "</td>
+										<td align='right'> " . $row['harga'] . "</td>
+										<td align='right'> " . $row['booked_fee'] . "</td>
+										<td align='center'>
+										";  
+										
+										if($temp1==0)
+											echo "SOLD";
+										else 
+											{
+											if($temp2==0)
+												echo "VACANT";
+											else 
+												echo "BOOKED";
+											}
+										echo	
+										"
+										</td>
+										<td>" . $row['nama_pemilik'] . "</td>
+										<td>" . $row['spec_kamar'] . "</td>
+										<td>" ;
+										if($temp2==0)
+											echo "NO";
+										else 
+											echo "YES";
+										echo "</td>
+									</tr>
+									";
+								}
+							?>
 							</form>
 						</table>
 					</div>
