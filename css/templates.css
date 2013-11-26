@@ -337,6 +337,7 @@ a
 	width:205px;
 	padding:5px;
 	height:100px;
+	overflow:hidden;
 	border-left: solid thin #DDDDDD;
 }
 
