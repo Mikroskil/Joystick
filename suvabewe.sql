@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 26, 2013 at 04:54 PM
+-- Generation Time: Nov 27, 2013 at 02:21 PM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -50,6 +50,13 @@ CREATE TABLE IF NOT EXISTS `apartemen` (
   `gambar_balkon` text NOT NULL,
   PRIMARY KEY (`no_kamar`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `apartemen`
+--
+
+INSERT INTO `apartemen` (`no_kamar`, `type_kamar`, `spec_kamar`, `password`, `nama_pemilik`, `email`, `available`, `harga`, `booked`, `booked_fee`, `booked_date`, `tagihan_listrik`, `tagihan_air`, `gambar_tidur1`, `gambar_tidur2`, `gambar_tidur3`, `gambar_makan`, `gambar_dapur`, `gambar_mandi`, `gambar_tamu`, `gambar_balkon`) VALUES
+(101, 'A', '', '1234', 'Sandy Usman Erry', '', 0, 0, 0, 0, '0000-00-00', 0, 0, '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 

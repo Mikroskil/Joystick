@@ -2,6 +2,8 @@ SL:
 -Login
 -atur php untuk slide di main.php
 -html buat user
+-logout
+-Buat supaya bisa login (atur nama database ma field yang ada di php)
 
 
 

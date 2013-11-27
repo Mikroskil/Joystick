@@ -12,14 +12,14 @@
 						<li class="headernavmenu">
 							<a href="login.php" style="color:#FFFFFF">Login</a>
 							<div class="headerlogin" id="headerlogin">
-								<form>
+								<form action="auth.php" method="post">
 									<label">Apartment Number or E-mail</label> <br />
-									<input type="text" class="hltextfocus"/><br />
+									<input type="text" class="hltextfocus" name="no_kamar"/><br />
 									<br />
 									<label>Password</label> <br />
-									<input type="password" class="hltextfocus"/><br />
+									<input type="password" class="hltextfocus" name="password"/><br />
 									<br />
-									<input type="button" class="signinbut" value="Sign-in" />
+									<input type="submit" class="signinbut" value="Sign-in" />
 								</form>
 							</div>
 						</li>
