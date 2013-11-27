@@ -4,28 +4,31 @@
 		<link rel="stylesheet" href="../css/templates.css" type="text/css" />
 		<?php
 			$errorMessage='';
-    		if (isset($_POST['Add'])) {
-			require_once 'validation.php';
 			require_once 'connect.php';
-        	if (!checkPassword($_POST['password']))
-            $errorMessage = 'Password must contain at least 5 characters !';
-        	else if (!checkEmail($_POST['email']))
-            $errorMessage = 'Email is invalid !';
-        	else if (isExist($_POST['email'], 'email'))
-            $errorMessage = 'Email is already in use !';
-			else {
-			$pilihtabel=mysql_query("SELECT * FROM apartemen");
-			$query="INSERT INTO apartemen(nama_pemilik,password,email) VALUES ('$_POST[nama_pemilik]','$_POST[password]','$_POST[email]')";					
-            if (mysql_query($query)) 
+			
+    		if (isset($_POST['Add'])) 
 			{
-                $errorMessage = 'Berhasil Ditambahkan';
-                header('location:main.php');
-            }
-			else
-			{
-			$errorMessage = 'Tambah gagal';
-			}
-			}
+				require_once 'validation.php';
+        		if (!checkPassword($_POST['password']))
+            		$errorMessage = 'Password must contain at least 5 characters !';
+        		else if (!checkEmail($_POST['email']))
+            		$errorMessage = 'Email is invalid !';
+        		else if (isExist($_POST['email'], 'email'))
+            		$errorMessage = 'Email is already in use !';
+				else 
+				{
+					$pilihtabel=mysql_query("SELECT * FROM apartemen");
+					$query="INSERT INTO apartemen(nama_pemilik,password,email) VALUES ('$_POST[nama_pemilik]','$_POST[password]','$_POST[email]')";					
+            		if (mysql_query($query)) 
+					{
+                		$errorMessage = 'Berhasil Ditambahkan';
+                		header('location:main.php');
+            		}
+					else
+					{
+						$errorMessage = 'Tambah gagal';
+					}
+				}
 			}
 		?>
 	</head>
@@ -44,10 +47,13 @@
 								<tr>
 									<td>No Kamar :</td>
 									<td><select>
+										<option>----Pilih No Kamar----</option>
 										<?php
-										while($row=mysql_fetch_array ($pilihtabel))
+										$pilihtabel=mysql_query("SELECT * FROM apartemen");
+										while($row=mysql_fetch_array($pilihtabel))
 										{
-											echo "<option>".$row['no_kamar']."</option>";
+											if (($row['available'] == 1) |($row['booked'] == 1))
+												echo "<option>".$row['no_kamar']."</option>";
 										}
 										?>
 										</select></td>
