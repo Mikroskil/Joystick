@@ -3,18 +3,29 @@
 		<title>SUVABEWE | Admin Page</title>
 		<link rel="stylesheet" href="../css/templates.css" type="text/css" />
 		<?php
-			$connect=mysql_connect("localhost", "root", "");
-			mysql_select_db("suvabewe", $connect);
+			$errorMessage='';
+    		if (isset($_POST['Add'])) {
+			require_once 'validation.php';
+			require_once 'connect.php';
+        	if (!checkPassword($_POST['password']))
+            $errorMessage = 'Password must contain at least 5 characters !';
+        	else if (!checkEmail($_POST['email']))
+            $errorMessage = 'Email is invalid !';
+        	else if (isExist($_POST['email'], 'email'))
+            $errorMessage = 'Email is already in use !';
+			else {
 			$pilihtabel=mysql_query("SELECT * FROM apartemen");
-			while($row=mysql_fetch_array ($pilihtabel))
+			$query="INSERT INTO apartemen(nama_pemilik,password,email) VALUES ('$_POST[nama_pemilik]','$_POST[password]','$_POST[email]')";					
+            if (mysql_query($query)) 
 			{
-				if(isset($_POST[$row['Add']]))
-				{
-					$temp=$row['nama_pemilik'];
-					$temp2=$row['password'];
-					$temp3=$row['email'];
-					mysql_query("INSERT INTO apartemen WHERE nama_pemilik = '$temp' & password = '$temp2' & email = '$temp3'");
-				}
+                $errorMessage = 'Berhasil Ditambahkan';
+                header('location:main.php');
+            }
+			else
+			{
+			$errorMessage = 'Tambah gagal';
+			}
+			}
 			}
 		?>
 	</head>
