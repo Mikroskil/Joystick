@@ -1,9 +1,8 @@
 <?php
     require_once 'connect.php';
-    session_start();
-    $username = $_POST['no_kamar'];
+    $id = $_POST['no_kamar'];
     $password = $_POST['password'];
-    $query = "SELECT nama_pemilik FROM apartemen WHERE no_kamar='$username' AND password='$password'";
+    $query = "SELECT nama_pemilik FROM apartemen WHERE no_kamar='$id' AND password='$password'";
     $result = mysql_query($query);
     if (mysql_num_rows($result) == 0) {
         $error = 'Username or password is invalid';
@@ -11,7 +10,16 @@
     }
     else {
 	 	session_start();
-        $_SESSION['login'] = $username;
+        $_SESSION['login'] = 1;
+		$pilihtabel = mysql_query("SELECT * FROM apartemen");
+		while (($row = mysql_fetch_array($pilihtabel)))
+		{
+			if ($row['no_kamar'] == $id && $row['password'] == $password)
+				$_SESSION['nama'] = $row['nama_pemilik'];
+		}
+		
+		$_SESSION['no_kamar'] = $id;
+		$_SESSION['password'] = $password;
 		header('Location:main.php');
     }
 ?>

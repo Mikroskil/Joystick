@@ -79,6 +79,10 @@
 					</div>
 				</div>
 			</div>
+			<?php 
+				mysql_close();
+				include_once ('footer.html'); 
+			?>
 		</div>
 	</body>
 </html>

@@ -3,8 +3,7 @@
 		<title>SUVABEWE | Admin</title>
 		<link rel="stylesheet" href="../css/templates.css" type="text/css" />
 		<?php
-			$connect = mysql_connect("localhost","root","");
-			mysql_select_db("suvabewe",$connect);
+			require_once 'connect.php';
 			$pilihtabel = mysql_query("SELECT * FROM berita");
 			$error = "";
 			
@@ -93,7 +92,10 @@
 					</div>
 				</div>
 			</div>
-			<?php include_once ('footer.html'); ?>
+			<?php 
+				mysql_close();
+				include_once ('footer.html'); 
+			?>
 		</div>
 	</body>
 </html>

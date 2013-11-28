@@ -10,17 +10,42 @@
 						<a href="contact_us.php"><li class="headernavmenu">Contact Us</li></a>
 						
 						<li class="headernavmenu">
-							<a href="login.php" style="color:#FFFFFF">Login</a>
+							<?php
+								session_start();
+								if (isset($_SESSION['login']))
+									echo "Welcome, " . $_SESSION['nama'];
+								else
+									echo "<a href='login.php' style='color:#FFFFFF'>Login</a>";
+							?>
+							
 							<div class="headerlogin" id="headerlogin">
-								<form action="auth.php" method="post">
-									<label">Apartment Number or E-mail</label> <br />
-									<input type="text" class="hltextfocus" name="no_kamar"/><br />
-									<br />
-									<label>Password</label> <br />
-									<input type="password" class="hltextfocus" name="password"/><br />
-									<br />
-									<input type="submit" class="signinbut" value="Sign-in" />
-								</form>
+							<?php
+								if (isset($_SESSION['login']))
+								{
+									if ($_SESSION['no_kamar'] == "000")
+									{
+										echo "<a href='admin.php'>Admin Page</a>";
+									}
+									else
+									{
+										echo "<a href='userinfor.php?id=" . $_SESSION['no_kamar'] . " '>User Information</a>";
+									}
+									echo "<br><a href='logout.php'>Log Out</a>";
+								}
+								else
+								{
+									echo "<form action='auth.php' method='post'>
+										<label>Apartment Number or E-mail</label> <br />
+										<input type='text' class='hltextfocus' name='no_kamar'/><br />
+										<br />
+										<label>Password</label> <br />
+										<input type='password' class='hltextfocus' name='password'/><br />
+										<br />
+										<input type='submit' class='signinbut' value='Sign-in' />
+										</form>";
+								}
+							?>
+								
 							</div>
 						</li>
 					</ul>
