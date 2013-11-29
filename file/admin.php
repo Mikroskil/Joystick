@@ -1,10 +1,11 @@
-<?php session_start(); ?>
+
 <html>
 	<head>
 		<title>SUVABEWE | Admin Page</title>
 		<link rel="stylesheet" href="../css/templates.css" type="text/css" />
 		<?php
 		require_once 'connect.php';
+		require_once 'session.php';
 		$pilihtabel=mysql_query("SELECT * FROM apartemen");
 		
 		while($row=mysql_fetch_array ($pilihtabel))
@@ -22,11 +23,11 @@
 			<?php include_once ('header.php');?>
 			<?php include_once('sidemenu.php');?>
 			<div class="container confmargin" style="height:900px">
-				
 				<div class="section showapt">
 					<div class="sectionheader bottomline">
 						<b>Admin Page | Show Data Apartment</b>
 					</div>
+					
 					<div class="sectioncontent ">
 						<table>
 							<form method="post">

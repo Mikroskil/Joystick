@@ -1,4 +1,4 @@
-
+<?php session_start();?>
 <html>
 	<head>
 		<title>SUVABEWE | Login</title>
@@ -13,7 +13,7 @@
 						<b>LOGIN</b>
 					</div>
 					<div class="sectioncontent loginsec">
-					<p>&nbsp;<?php if (isset($_GET['error']) ) echo $_GET['error']; ?></p>
+					<p>&nbsp;<?php if (isset($_SESSION['error']) ) echo $_SESSION['error']; ?></p>
 					<table>
 						<form action="auth.php" method="post">
 							<tr>
