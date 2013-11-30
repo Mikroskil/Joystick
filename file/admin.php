@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> b0c6947382e5c5cde52f490867ed6b946b1dcf55
-=======
-
->>>>>>> b0c6947382e5c5cde52f490867ed6b946b1dcf55
-=======
-
->>>>>>> b0c6947382e5c5cde52f490867ed6b946b1dcf55
 <html>
 	<head>
 		<title>SUVABEWE | Admin Page</title>
