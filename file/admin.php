@@ -1,9 +1,14 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> b0c6947382e5c5cde52f490867ed6b946b1dcf55
 <html>
 	<head>
 		<title>SUVABEWE | Admin Page</title>
 		<link rel="stylesheet" href="../css/templates.css" type="text/css" />
 		<?php
 		require_once 'connect.php';
+		require_once 'session.php';
 		$pilihtabel=mysql_query("SELECT * FROM apartemen");
 		?>
 	</head>
@@ -12,11 +17,11 @@
 			<?php include_once ('header.php');?>
 			<?php include_once('sidemenu.php');?>
 			<div class="container confmargin" style="height:900px">
-				
 				<div class="section showapt">
 					<div class="sectionheader bottomline">
 						<b>Admin Page | Show Data Apartment</b>
 					</div>
+					
 					<div class="sectioncontent ">
 						<table>
 							<form method="post">
