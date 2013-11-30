@@ -17,16 +17,18 @@
             		$errorMessage = 'Email is already in use !';
 				else 
 				{
-					$pilihtabel=mysql_query("SELECT * FROM apartemen");
-					$query="INSERT INTO apartemen(nama_pemilik,password,email) VALUES ('$_POST[nama_pemilik]','$_POST[password]','$_POST[email]')";					
+					$pilihtabel=mysql_query("SELECT no_kamar FROM apartemen");
+					$row=mysql_fetch_array ($pilihtabel);
+					$temp=$row['no_kamar'];
+					$query="UPDATE apartemen SET nama_pemilik='$_POST[nama_pemilik]', password='$_POST[password]', email='$_POST[email]' WHERE no_kamar='$temp'";					
             		if (mysql_query($query)) 
 					{
                 		$errorMessage = 'Berhasil Ditambahkan';
-                		header('location:main.php');
+                		header('location:admin.php');
             		}
 					else
 					{
-						$errorMessage = 'Tambah gagal';
+						$errorMessage = 'Penambahan gagal';
 					}
 				}
 			}

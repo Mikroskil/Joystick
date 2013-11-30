@@ -7,7 +7,7 @@
 		<div class="wrapper" id="wrapper">
 			<?php include_once ('header.php');?>
 			<div>
-					<img class="floorplanimg"  src="../img/1_first_floor.jpg"  />
+					<img class="floorplanimg"  src="../img/1_first_floor.jpg"/>
 			</div>
 			<div class="container" style="height:700px">
 				<div class="section apartmentsec">

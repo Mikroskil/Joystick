@@ -1,7 +1,36 @@
-8<html>
+<html>
 	<head>
 		<title>SUVABEWE | Admin Page</title>
 		<link rel="stylesheet" href="../css/templates.css" type="text/css" />
+		<?php
+			$errorMessage='';
+			require_once 'connect.php';
+			
+    		if (isset($_POST['Add'])) 
+			{
+				require_once 'validation.php';
+        		if (!checkPassword($_POST['password']))
+            		$errorMessage = 'Password must contain at least 5 characters !';
+        		else if (!checkEmail($_POST['email']))
+            		$errorMessage = 'Email is invalid !';
+        		else if (isExist($_POST['email'], 'email'))
+            		$errorMessage = 'Email is already in use !';
+				else 
+				{
+					$pilihtabel=mysql_query("SELECT * FROM apartemen");
+					$query="INSERT INTO apartemen(nama_pemilik,password,email) VALUES ('$_POST[nama_pemilik]','$_POST[password]','$_POST[email]' WHERE )";					
+            		if (mysql_query($query)) 
+					{
+                		$errorMessage = 'Berhasil Ditambahkan';
+                		header('location:admin.php');
+            		}
+					else
+					{
+						$errorMessage = 'Penambahan gagal';
+					}
+				}
+			}
+		?>
 	</head>
 	<body>
 		<div class="wrapper" id="wrapper">
@@ -69,7 +98,7 @@
 						</tr>
 						<tr>
 							<td>&nbsp; </td>
-							<td rowspan="2"><input type="submit" value="Add"/> <input type="reset" value="Reset"></td>
+							<td rowspan="2"><input type="submit" value="Add" name="Add"/> <input type="reset" value="Reset"></td>
 						</tr>
 						</form>							
 					</table>	

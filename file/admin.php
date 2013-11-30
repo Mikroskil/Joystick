@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <html>
 	<head>
 		<title>SUVABEWE | Admin Page</title>
@@ -6,15 +5,6 @@
 		<?php
 		require_once 'connect.php';
 		$pilihtabel=mysql_query("SELECT * FROM apartemen");
-		
-		while($row=mysql_fetch_array ($pilihtabel))
-		{
-			if(isset($_POST [$row['no_kamar']]))
-			{
-				$temp=$row['no_kamar'];
-				mysql_query("DELETE FROM apartemen WHERE no_kamar='$temp'");
-			}
-		}
 		?>
 	</head>
 	<body>
@@ -32,13 +22,14 @@
 							<form method="post">
 								<tr>
 									<td width="80px"> No Kamar </td>
-									<td width="100px"> Tipe </td>
-									<td width="150px"> Harga </td>
-									<td width="150px"> Booking Fee </td>
-									<td width="50px"> Status </td>
-									<td width="120px">Pemilik</td>
+									<td width="50px"> Tipe </td>
+									<td width="120px"> Harga </td>
+									<td width="120px"> Booking Fee </td>
+									<td width="100px"> Status </td>
+									<td width="120px"> Pemilik </td>
 									<td width="150px"> Spef </td>
 									<td width="100px"> Available </td>
+									<td></td>
 								</tr>
 								
 								<?php
@@ -58,9 +49,9 @@
 										"<tr> 
 										<td> " . $row['no_kamar'] . "</td>
 										<td> " . $row['type_kamar'] . "</td>
-										<td align='right'> " . $row['harga'] . "</td>
-										<td align='right'> " . $row['booked_fee'] . "</td>
-										<td align='center'>
+										<td> " . $row['harga'] . "</td>
+										<td> " . $row['booked_fee'] . "</td>
+										<td>
 										";  
 										
 										if($temp1==0)
@@ -83,6 +74,7 @@
 										else 
 											echo "YES";
 										echo "</td>
+										<td width= '50px'> <input type='button' name='edit' value='edit'> </td>
 									</tr>
 									";
 								}

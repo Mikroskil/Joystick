@@ -113,14 +113,14 @@ a
 /*Footer Section*/
 .footer
 {
-	width:1020;
+	width:1000;
 	margin:0px -15px 0px -15px;
 	padding:5px;
 }
 
 .subfooter1
 {
-	width:1000;
+	width:980;
 	margin-left:-5px;
 	padding:15px;
 	background-color:#444444;
@@ -130,7 +130,7 @@ a
 
 .subfooter2
 {
-	width:1000;
+	width:980;
 	margin:0px 0px -5px -5px;
 	padding:15px;
 	background-color:#333333;
@@ -238,9 +238,9 @@ a
 /*apartment.html Section*/
 .floorplanimg
 {
-	width:1300px;
+	width:1000px;
 	height:500px;
-	margin-left:-150px;
+	margin-left:-20px;
 	margin-top:10px;
 	display:block;
 }
