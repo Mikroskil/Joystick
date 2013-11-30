@@ -1,13 +1,13 @@
 <?php
-	session_start();
     require_once 'connect.php';
     $id = $_POST['no_kamar'];
     $password = $_POST['password'];
     $query = "SELECT nama_pemilik FROM apartemen WHERE no_kamar='$id' AND password='$password'";
     $result = mysql_query($query);
     if (mysql_num_rows($result) == 0) {
-        $_SESSION['error'] = 'Username or password is invalid';
-		header('Location:login.php?error=' . $_SESSION['error']);
+           	$error = 'Username or password is invalid';
+			header('Location:login.php?error=' . $error);
+
     }
     else {
 	 	session_start();
