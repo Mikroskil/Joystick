@@ -8,18 +8,22 @@
 			$error = "";
 			if (isset($_POST["tambahberita"]))
 			{
-				if ($_POST["judul"] == "")
-					$error = "Judul Belumd Diisi";
+				if($_POST["id"] == "")
+					$error = "ID Berita Belum Diisi";
+				else if ($_POST["judul"] == "")
+					$error = "Judul Belum Diisi";
 				else if ($_POST["isiberita"] == "")
 					$error = "Berita Belum Diisi";
 				else
 				{
+					date_default_timezone_set('Asia/Jakarta');
 					$judul = $_POST["judul"];
+					$id=$_POST['id'];
 					$isi = $_POST["isiberita"];
-					$tanggal = date("Y/m/d");
+					$tanggal = date("Y-m-d");
 					if ($_POST["gambar"] != null)
 					{
-						$temptanggal = date("ymd");
+						$temptanggal = date("Y-m-d");
 						$filename = $_FILES["gambar"]["name"];
 						$extensi = $_FILES["gambar"]["type"];
 						$gambar = $temptanggal .$filename;
@@ -33,7 +37,7 @@
 					
 					
 					$masuk = mysql_query("INSERT INTO berita
-							VALUES ('$gambar','$judul','$isi','$tanggal') " , $connect);
+							VALUES ('$id', '$gambar', '$judul','$isi', '$tanggal') " , $connect);
 				}
 			}
 		?>
@@ -44,10 +48,14 @@
 			<div class="container" style="height:600px">
 				<?php include_once('sidemenu.php');?>
 				<div class="section confmargin">
-					<div class="sectionheader bottomline">ADMIN PAGE | ADD NEWS AND EVENTS</div>
+					<div class="sectionheader bottomline">Admin Page | Add News And Events</div>
 					<div class="sectioncontent">
 						<form method="post">
 						<table width="900px">
+							<tr>
+								<td width="150px" align="left" valign="top"> ID </td>
+								<td width="100px"> <input type="text" maxlength="4" name="id"></td>
+							</tr>
 							<tr>
 								<td width="150px" valign="top" align="left">Image</td>
 								<td width="700px"><input type="file" name="gambar"></td>
