@@ -13,15 +13,21 @@
             		$errorMessage = 'Password must contain at least 5 characters !';
         		else if (!checkEmail($_POST['email']))
             		$errorMessage = 'Email is invalid !';
-        		else if (isExist($_POST['email'], 'email'))
-            		$errorMessage = 'Email is already in use !';
 				else 
 				{
-					$pilihtabel=mysql_query("SELECT no_kamar FROM apartemen");
-					$row=mysql_fetch_array ($pilihtabel);
-					$temp=$row['no_kamar'];
-					$query="UPDATE apartemen SET nama_pemilik='$_POST[nama_pemilik]', password='$_POST[password]', email='$_POST[email]' WHERE no_kamar='$temp'";					
-            		if (mysql_query($query)) 
+					$pilihtabel=mysql_query("SELECT * FROM apartemen");
+					while ($row=mysql_fetch_array ($pilihtabel))
+					{
+						if ($row['no_kamar'] == $_POST['no_kamar'])
+						{
+							$temp=$row['no_kamar'];
+							$query=mysql_query("UPDATE apartemen SET nama_pemilik='$_POST[nama_pemilik]', password='$_POST[password]', email='$_POST[email]' , available='0', booked='0' , booked_fee='0', booked_date='0' WHERE no_kamar='$temp'");	
+							
+						}
+					}
+					
+									
+            		if ($query) 
 					{
                 		$errorMessage = 'Berhasil Ditambahkan';
                 		header('location:admin.php');
@@ -44,11 +50,12 @@
 						<b>Admin Page | Add User</b>
 					</div>
 					<div class="sectioncontent ">
+						<?php if ($errorMessage != "") echo $errorMessage; ?>
 						<form method="post">
 							<table>
 								<tr>
 									<td>No Kamar :</td>
-									<td><select>
+									<td><select name="no_kamar">
 										<option>----Pilih No Kamar----</option>
 										<?php
 										$pilihtabel=mysql_query("SELECT * FROM apartemen");
