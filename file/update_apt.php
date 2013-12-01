@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <html>
 	<head>
 		<link rel="stylesheet" href="../css/templates.css" type="text/css" />
@@ -18,12 +17,7 @@
 		$data['tagihan_air'] = $row['tagihan_listrik'];
 		
 		$cek=true;
-		$no_kamar=$_POST['no_kamar'];
-		$nama_pemilik=$_POST['nama_pemilik'];
-		$email=$_POST['email'];
-		$password=$_POST['password'];
-		$tagihan_listrik=$_POST['tagihan_listrik'];
-		$tagihan_air=$_POST['tagihan_air'];
+		
 		
 		$error="";
 		if(isset($_POST["edit"]))
@@ -36,11 +30,15 @@
 					$error="Tagihan Air salah isi!";
 				else
 				{
+					$password=$_POST['password'];
+					$tagihan_listrik=$_POST['tagihan_listrik'];
+					$tagihan_air=$_POST['tagihan_air'];
 					if ($cek)
 					$edit=mysql_query("UPDATE apartemen
 					SET password='$password', tagihan_listrik='$tagihan_listrik', tagihan_air='$tagihan_air'
 					WHERE no_kamar='$no_kamar'
-					");					
+					");				
+						
 					if($edit==1)
 						$error="Update Berhasil!";
 					else

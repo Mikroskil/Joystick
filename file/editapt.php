@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <html>
 	<head>
 		<title>SUVABEWE | Admin Page</title>
@@ -44,15 +43,18 @@
 									while(($row=mysql_fetch_array($pilihtabel)))
 									{
 										$i = $i + 1;
+										if ($row['no_kamar'] != 100)
+										{
+											echo 
+												"<tr> 
+												<td> " . $row['no_kamar'] . "</td>
+												<td> " . $row['nama_pemilik'] . " <br> (" . $row['email'] . ")</td>
+												<td> <a href='update_apt.php?target=" . $row['no_kamar'] . "'><input type='button' value='Ubah'></a>
+												</td>
+											</tr>
+											";
+										}
 										
-										echo 
-										"<tr> 
-										<td> " . $row['no_kamar'] . "</td>
-										<td> " . $row['nama_pemilik'] . " <br> (" . $row['email'] . ")</td>
-										<td> <a href='update_apt.php?target=" . $row['no_kamar'] . "'><input type='button' value='Ubah'></a>
-										</td>
-									</tr>
-									";
 								}
 							?>
 							</form>
