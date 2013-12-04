@@ -4,7 +4,7 @@
 		<link rel="stylesheet" href="../css/templates.css" type="text/css" />
 		<?php
 		require_once 'connect.php';
-		require_once 'session.php';
+		
 		$pilihtabel=mysql_query("SELECT * FROM apartemen");
 		?>
 	</head>
@@ -46,38 +46,41 @@
 										$temp2=$row['booked'];
 										$i = $i + 1;
 										
-										echo 
-										"<tr> 
-										<td> " . $row['no_kamar'] . "</td>
-										<td> " . $row['type_kamar'] . "</td>
-										<td> " . $row['harga'] . "</td>
-										<td> " . $row['booked_fee'] . "</td>
-										<td>
-										";  
-										
-										if($temp1==0)
-											echo "SOLD";
-										else 
-											{
-											if($temp2==0)
-												echo "VACANT";
-											else 
-												echo "BOOKED";
-											}
-										echo	
-										"
-										</td>
-										<td>" . $row['nama_pemilik'] . "</td>
-										<td>" . $row['spec_kamar'] . "</td>
-										<td>" ;
-										if($temp2==0)
-											echo "NO";
-										else 
-											echo "YES";
-										echo "</td>
-										<td width= '50px'> <input type='button' name='edit' value='edit'> </td>
-									</tr>
-									";
+										if ($row['no_kamar'] != 100)
+										{
+												echo 
+												"<tr> 
+												<td> " . $row['no_kamar'] . "</td>
+												<td> " . $row['type_kamar'] . "</td>
+												<td> " . $row['harga'] . "</td>
+												<td> " . $row['booked_fee'] . "</td>
+												<td>
+												";  
+												
+												if($temp1==0)
+													echo "SOLD";
+												else 
+													{
+													if($temp2==0)
+														echo "VACANT";
+													else 
+														echo "BOOKED";
+													}
+												echo	
+												"
+												</td>
+												<td>" . $row['nama_pemilik'] . "</td>
+												<td>" . $row['spec_kamar'] . "</td>
+												<td>" ;
+												if($temp2==0)
+													echo "NO";
+												else 
+													echo "YES";
+												echo "</td>
+												
+											</tr>
+											";
+										}
 								}
 							?>
 							</form>

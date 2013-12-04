@@ -22,7 +22,7 @@
 							<?php
 								if (isset($_SESSION['login']))
 								{
-									if ($_SESSION['no_kamar'] == "000")
+									if ($_SESSION['no_kamar'] == "100")
 									{
 										echo "<a href='admin.php'>Admin Page</a>";
 									}
