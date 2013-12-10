@@ -12,7 +12,7 @@
 			<div class="container" style="height:700px">
 				<div class="section apartmentsec">
 					<div class="sectionheader bottomline">
-						<b>APARTMENT DETAIL</b><a href="apartmentdetail.html" class="sectionheaderlink">see more detail</a>
+						<b>APARTMENT DETAIL</b><a href="apartmentdetail.php" class="sectionheaderlink">see more detail</a>
 					</div>
 					<div class="sectioncontent apartmentsecimg">
 						<img align="middle"/>
