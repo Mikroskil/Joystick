@@ -16,7 +16,7 @@
 					<?php
 					require_once 'connect.php';
 					$pilihtabel=mysql_query("SELECT * FROM apartemen");
-						echo "<form action='editvacant.php' method='get'>
+						echo "
 						<table>
 						<tr align='center'>	
 						<th width='100'>No Kamar</th>
@@ -27,22 +27,22 @@
 						while($row = mysql_fetch_array($pilihtabel))
   						{
 						  echo "<tr align='center'>";
-						  echo "<td><input type='text' size='1' name='no_kamar' readonly value='".$row['no_kamar']."'></td>";
+						  echo "<form action='editvacant.php' method='get'><td><input type='text' size='1' name='no_kamar' readonly value='".$row['no_kamar']."'></td>";
 						  if ($row['booked']=='0')
 						  {
-						  echo "<td><input type='checkbox' checked='checked' disabled='disabled' value='1'></td>";
+						  		echo "<td><input type='checkbox' checked='checked' disabled='disabled' value='1'></td>";
 						  }
-						  						  else
+						  else
 						  {
-						  echo "<td><input type='checkbox' disabled='disabled' value='0'></td>";
+						  		echo "<td><input type='checkbox' disabled='disabled' value='0'></td>";
 						  }
 
 						  echo "<td><input type='submit' value='edit'></td>";
-						  echo "</tr>";
+						  echo "</form></tr>";
 						  
 						  }
 						echo "</table>";
-						echo "</form>"
+						echo ""
 ?>
 					</div>
 				</div>
