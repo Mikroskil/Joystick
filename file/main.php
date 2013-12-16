@@ -5,7 +5,7 @@
 		</script>
 		<?php
 			require_once 'connect.php';
-			require_once 'session.php';
+			
 			
 			$pilihtabel = mysql_query("SELECT * FROM berita ORDER BY tanggal DESC");
 			$berita = Array();
