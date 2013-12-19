@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.2.2
+-- version 3.2.4
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 29, 2013 at 08:41 AM
--- Server version: 5.5.27
--- PHP Version: 5.4.7
+-- Host: localhost
+-- Waktu pembuatan: 19. Desember 2013 jam 22:32
+-- Versi Server: 5.1.41
+-- Versi PHP: 5.3.1
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -19,11 +18,13 @@ SET time_zone = "+00:00";
 --
 -- Database: `suvabewe`
 --
+CREATE DATABASE `suvabewe` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `suvabewe`;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `apartemen`
+-- Struktur dari tabel `apartemen`
 --
 
 CREATE TABLE IF NOT EXISTS `apartemen` (
@@ -52,7 +53,7 @@ CREATE TABLE IF NOT EXISTS `apartemen` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `apartemen`
+-- Dumping data untuk tabel `apartemen`
 --
 
 INSERT INTO `apartemen` (`no_kamar`, `type_kamar`, `spec_kamar`, `password`, `nama_pemilik`, `email`, `available`, `harga`, `booked`, `booked_fee`, `booked_date`, `tagihan_listrik`, `tagihan_air`, `gambar_tidur1`, `gambar_tidur2`, `gambar_tidur3`, `gambar_makan`, `gambar_dapur`, `gambar_mandi`, `gambar_tamu`, `gambar_balkon`) VALUES
@@ -62,28 +63,29 @@ INSERT INTO `apartemen` (`no_kamar`, `type_kamar`, `spec_kamar`, `password`, `na
 -- --------------------------------------------------------
 
 --
--- Table structure for table `berita`
+-- Struktur dari tabel `berita`
 --
 
 CREATE TABLE IF NOT EXISTS `berita` (
+  `id` int(4) NOT NULL AUTO_INCREMENT,
   `gambar` text NOT NULL,
   `judul` varchar(100) NOT NULL,
   `isi` text NOT NULL,
-  `tanggal` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `tanggal` date NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 ;
 
 --
--- Dumping data for table `berita`
+-- Dumping data untuk tabel `berita`
 --
 
-INSERT INTO `berita` (`gambar`, `judul`, `isi`, `tanggal`) VALUES
-('', 'Test12355555', 'TestHoam', '2013-11-26'),
-('', 'Grand Opening Apartemen', 'Pembukaan bla2\r\nbla2\r\nbla2\r\nbla2\r\nbla2\r\nbla2', '2013-11-26');
+INSERT INTO `berita` (`id`, `gambar`, `judul`, `isi`, `tanggal`) VALUES
+(1, '2013-11-30', 'Hello and Welcome to SUVABEWE', 'hafjldajfla', '2013-11-30');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `fasilitas`
+-- Struktur dari tabel `fasilitas`
 --
 
 CREATE TABLE IF NOT EXISTS `fasilitas` (
@@ -91,16 +93,10 @@ CREATE TABLE IF NOT EXISTS `fasilitas` (
   `ketarangan` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
-
 --
--- Table structure for table `slide`
+-- Dumping data untuk tabel `fasilitas`
 --
 
-CREATE TABLE IF NOT EXISTS `slide` (
-  `gambar` text NOT NULL,
-  `pagelink` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
