@@ -1,10 +1,11 @@
-SL:
--Login
--atur php untuk slide di main.php
--html buat user
--logout
--Buat supaya bisa login (atur nama database ma field yang ada di php)
-
+- nama user diambil nama depan
+- masalah session
+- edit vacant apartement
+- mslh upload gambar pada vacant apartment
+- mslh upload gambar pada edit news dan add news
+- html apartment_detail belum ada
+- booking
+- html apartment
 
 
 
