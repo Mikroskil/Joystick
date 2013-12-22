@@ -72,7 +72,7 @@
 												<td>" . $row['nama_pemilik'] . "</td>
 												<td>" . $row['spec_kamar'] . "</td>
 												<td>" ;
-												if($temp2==0)
+												if($temp1==0)
 													echo "NO";
 												else 
 													echo "YES";

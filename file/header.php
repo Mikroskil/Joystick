@@ -12,8 +12,10 @@
 						<li class="headernavmenu">
 							<?php
 								session_start();
-								if (isset($_SESSION['login']))
-									echo "Welcome, " . $_SESSION['nama'];
+								if (isset($_SESSION['login'])){
+									$nama = explode(' ', $_SESSION['nama']);
+									echo "Welcome, " . $nama[0];
+								}
 								else
 									echo "<a href='login.php' style='color:#FFFFFF'>Login</a>";
 							?>
