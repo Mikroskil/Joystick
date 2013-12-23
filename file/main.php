@@ -5,8 +5,6 @@
 		</script>
 		<?php
 			require_once 'connect.php';
-			
-			
 			$pilihtabel = mysql_query("SELECT * FROM berita ORDER BY tanggal DESC");
 			$berita = Array();
 			$n = 0;
@@ -32,6 +30,10 @@
 						<b>NEWS AND EVENTS</b><a href="news.html" class="sectionheaderlink">all news</a>
 					</div>
 					<?php
+					
+					?>
+					<?php
+					
 						$pilihtabel = mysql_query("SELECT * FROM berita");
 						for ( $i = 0 ; $i < $n ; $i++)
 						{
@@ -39,7 +41,7 @@
 							echo "<div class='newshead'><a href='newscontent.php?title=" . $berita[$i]['judul'] ."'>" . $berita[$i]['judul'] . "</a></div>";
 							if ($berita[$i]['gambar'] != "")
 							{
-								echo "<img class='newsimg' src='../img/" . $berita[$i]['gambar']." />";
+								echo "<img class='newsimg' src='imgnew/".$berita[$i]['gambar']."'/>";
 							}
 							echo "<div class='newscon'>". $berita[$i]['isi'] . "</div></div>";
 						}
