@@ -1,10 +1,6 @@
-<html>
-	<head>
-		<title>SUVABEWE | Admin</title>
-		<link rel="stylesheet" href="../css/templates.css" type="text/css" />
 		<?php
 			require_once 'connect.php';
-			$pilihtabel = mysql_query("SELECT * FROM berita");
+			require_once 'session.php';
 			$error = "";
 			if (isset($_POST["tambahberita"]))
 			{
@@ -21,26 +17,30 @@
 					$id=$_POST['id'];
 					$isi = $_POST["isiberita"];
 					$tanggal = date("Y-m-d");
-					if ($_POST["gambar"] != null)
-					{
-						$temptanggal = date("Y-m-d");
-						$filename = $_FILES["gambar"]["name"];
-						$extensi = $_FILES["gambar"]["type"];
-						$gambar = $temptanggal .$filename;
-						$path = "../image/" . $gambar;
-						move_uploaded_file($_FILES["gambar"]["tmp_name"], $path);
-					}
-					else
-					{
-						$gambar = "";
-					}
-					
-					
-					$masuk = mysql_query("INSERT INTO berita
-							VALUES ('$id', '$gambar', '$judul','$isi', '$tanggal') " , $connect);
+					$name       = $_FILES['file']['name'];  
+					$temp_name  = $_FILES['file']['tmp_name'];  
+					if(isset($name)){
+						if(!empty($name)){      
+							$imageName = time().'-'.$_FILES["file"]["name"];
+							$path = pathinfo(__file__);
+							$path = $path['dirname'];
+							$img=$path.'\imgnew\\'.$imageName    ;
+							if(move_uploaded_file($temp_name, $img)){
+								echo 'uploaded';
+							}
+						} }  else {
+							echo 'uploaded failed';
+						} 
+					$pilihtabel = mysql_query("SELECT * FROM berita");					
+					$query=mysql_query("INSERT INTO berita VALUES 						('$id','$imageName','$judul','$isi','$tanggal')");
+
 				}
 			}
 		?>
+<html>
+	<head>
+		<title>SUVABEWE | Admin</title>
+		<link rel="stylesheet" href="../css/templates.css" type="text/css" />
 	</head>
 	<body>
 		<div class="wrapper" id="wrapper">
@@ -50,7 +50,7 @@
 				<div class="section confmargin">
 					<div class="sectionheader bottomline">Admin Page | Add News And Events</div>
 					<div class="sectioncontent">
-						<form method="post">
+						<form method="post" action="" enctype="multipart/form-data">
 						<table width="900px">
 							<tr>
 								<td width="150px" align="left" valign="top"> ID </td>
@@ -58,7 +58,7 @@
 							</tr>
 							<tr>
 								<td width="150px" valign="top" align="left">Image</td>
-								<td width="700px"><input type="file" name="gambar"></td>
+								<td width="700px"><input type="file" name="file" id="file"/></td>
 							</tr>
 							<tr>
 								<td width="150px" valign="top" align="left">Title</td>
@@ -70,7 +70,7 @@
 							</tr>
 							<tr>
 								<td colspan="2" align="center" valign="middle" height="50px">
-										<input type="submit" value="Add News" name="tambahberita">
+										<form method="post"><input type="submit" value="Add News" name="tambahberita"></form>
 								</td>
 							</tr>
 							<?php 
