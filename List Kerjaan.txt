@@ -6,6 +6,7 @@
 - html apartment_detail belum ada
 - booking
 - html apartment
+- database (isi no kamar)
 
 
 
