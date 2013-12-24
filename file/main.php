@@ -10,6 +10,7 @@
 			$n = 0;
 			while (($row = mysql_fetch_array($pilihtabel)) && ($n <4))
 			{
+					$berita[$n]['id'] = $row['id'];
 					$berita[$n]['gambar']= $row['gambar'];
 					$berita[$n]['judul'] = $row['judul'];
 					$berita[$n]['isi'] = $row['isi'];
@@ -31,17 +32,14 @@
 					</div>
 					<?php
 					
-					?>
-					<?php
-					
 						$pilihtabel = mysql_query("SELECT * FROM berita");
 						for ( $i = 0 ; $i < $n ; $i++)
 						{
 							echo "<div class='sectioncontent indexnewssec'>";
-							echo "<div class='newshead'><a href='newscontent.php?title=" . $berita[$i]['judul'] ."'>" . $berita[$i]['judul'] . "</a></div>";
+							echo "<div class='newshead'><a href='newscontent.php?id=" . $berita[$i]['id'] ."'>" . $berita[$i]['judul'] . "</a></div>";
 							if ($berita[$i]['gambar'] != "")
 							{
-								echo "<img class='newsimg' src='imgnew/".$berita[$i]['gambar']."'/>";
+								echo "<img class='newsimg' src='../img/".$berita[$i]['gambar']."'/>";
 							}
 							echo "<div class='newscon'>". $berita[$i]['isi'] . "</div></div>";
 						}

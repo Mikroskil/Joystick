@@ -1,12 +1,10 @@
 		<?php
 			require_once 'connect.php';
-			require_once 'session.php';
+			
 			$error = "";
 			if (isset($_POST["tambahberita"]))
 			{
-				if($_POST["id"] == "")
-					$error = "ID Berita Belum Diisi";
-				else if ($_POST["judul"] == "")
+				if ($_POST["judul"] == "")
 					$error = "Judul Belum Diisi";
 				else if ($_POST["isiberita"] == "")
 					$error = "Berita Belum Diisi";
@@ -23,8 +21,8 @@
 						if(!empty($name)){      
 							$imageName = time().'-'.$_FILES["file"]["name"];
 							$path = pathinfo(__file__);
-							$path = $path['dirname'];
-							$img=$path.'\imgnew\\'.$imageName    ;
+							
+							$img='..\img\\'.$imageName    ;
 							if(move_uploaded_file($temp_name, $img)){
 								echo 'uploaded';
 							}
@@ -32,8 +30,9 @@
 							echo 'uploaded failed';
 						} 
 					$pilihtabel = mysql_query("SELECT * FROM berita");					
-					$query=mysql_query("INSERT INTO berita VALUES 						('$id','$imageName','$judul','$isi','$tanggal')");
-
+					$query=mysql_query("INSERT INTO berita VALUES 						
+					(NULL, '$imageName','$judul','$isi','$tanggal')");
+					
 				}
 			}
 		?>

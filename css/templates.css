@@ -394,6 +394,12 @@ a:hover
 {
 	width:700px;
 }
+
+.newspagecon
+{
+	width:900px;
+}
+
 .newssec
 {
 	width:215px;
@@ -414,6 +420,14 @@ a:hover
 	width:210px;
 	margin:5px 0px 5px 0px;
 }
+
+.newsconimg
+{
+	height:200px;
+	width:500px;
+	margin:5px 0px 5px 0px;
+}
+
 .newscon
 {
 	width:205px;
