@@ -13,37 +13,41 @@
 						<b>Admin Page | Edit Vacant</b>
 					</div>
 					<div class="sectioncontent ">
-					<?php
-					require_once 'connect.php';
-					$pilihtabel=mysql_query("SELECT * FROM apartemen");
-						echo "
-						<table>
+					<table>
 						<tr align='center'>	
 						<th width='100'>No Kamar</th>
 						<th>Booked</th>
 						<th>&nbsp;</th>
-						</tr>";
-			
-						while($row = mysql_fetch_array($pilihtabel))
-  						{
-						  echo "<tr align='center'>";
-						  echo "<form action='editvacant.php' method='get'><td><input type='text' size='1' name='no_kamar' readonly value='".$row['no_kamar']."'></td>";
-						  if ($row['booked']=='0')
-						  {
-						  		echo "<td><input type='checkbox' checked='checked' disabled='disabled' value='1'></td>";
-						  }
-						  else
-						  {
-						  		echo "<td><input type='checkbox' disabled='disabled' value='0'></td>";
-						  }
-
-						  echo "<td><input type='submit' value='edit'></td>";
-						  echo "</form></tr>";
-						  
-						  }
-						echo "</table>";
-						echo ""
-?>
+						</tr>
+						<?php
+						require_once 'connect.php';
+						$pilihtabel=mysql_query("SELECT * FROM apartemen WHERE available <> 0");
+							
+							$kosong = true;
+							while($row = mysql_fetch_array($pilihtabel))
+							{
+							  echo "<tr align='center'>";
+							  echo "<form action='editvacant.php' method='get'><td><input type='text' size='1' name='no_kamar' readonly value='".$row['no_kamar']."'></td>";
+							  if ($row['booked']=='100')
+							  {
+									echo "<td><input type='checkbox' checked='checked' disabled='disabled' value='1'></td>";
+							  }
+							  else
+							  {
+									echo "<td><input type='checkbox' disabled='disabled' value='0'></td>";
+							  }
+	
+							  echo "<td><input type='submit' value='edit'></td>";
+							  echo "</form></tr>";
+							  $kosong = false;
+							 }
+							 if ($kosong)
+							 {
+								echo "<tr><td colspan='3' align='center' valign='center'><b>Tidak Ada Apartemen Kosong!</b></td></tr>";
+							 }
+							?>
+							
+							</table>
 					</div>
 				</div>
 			</div>

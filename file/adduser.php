@@ -45,16 +45,16 @@
 			<?php include_once ('header.php');?>
 			<?php include_once('sidemenu.php');?>
 			<div class="container confmargin" style="height:900px">
-				<div class="section showapt">
+				<div class="section addusersec">
 					<div class="sectionheader bottomline">
 						<b>Admin Page | Add User</b>
 					</div>
 					<div class="sectioncontent ">
 						<?php if ($errorMessage != "") echo $errorMessage; ?>
 						<form method="post">
-							<table>
-								<tr>
-									<td>No Kamar :</td>
+							<table vspace="5">
+								<tr >
+									<td>No Kamar </td>
 									<td><select name="no_kamar">
 										<option>----Pilih No Kamar----</option>
 										<?php
@@ -68,15 +68,15 @@
 										</select></td>
 								</tr>
 								<tr>
-									<td>Nama pemilik :</td>
+									<td>Nama pemilik </td>
 									<td><input type="text" name="nama_pemilik"/></td>
 								</tr>
 								<tr>
-									<td>Password :</td>
+									<td>Password </td>
 									<td><input type="password" name="password"/></td>
 								</tr>
 								<tr>
-									<td>Email :</td>
+									<td>Email </td>
 									<td><input type="text" name="email"/></td>
 								</tr>
 								<tr>

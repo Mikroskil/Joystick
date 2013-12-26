@@ -110,7 +110,7 @@ a:hover
 
 .hltextfocus:focus
 {
-	color:#CCCCCC;
+	color:#000000;
 	box-shadow: 0px 0px 8px #52A8FF;
 }
 /*End of Header Section*/
@@ -395,6 +395,11 @@ a:hover
 	width:700px;
 }
 
+.newsdetailsec
+{
+	width:930px;
+}
+
 .newspagecon
 {
 	width:900px;
@@ -411,8 +416,10 @@ a:hover
 .newshead
 {
 	width:205px;
+	height:16px;
 	font-weight:300;
 	padding:5px;
+	overflow:hidden;
 }
 .newsimg
 {
@@ -512,6 +519,16 @@ a:hover
 /*admin.php section*/
 .showapt
 {
-	width:auto;
+	width:900px;
 }
+
 /*end of admin.php section*/-
+
+
+/*adduser.php section*/
+.addusersec
+{
+	width:900px;
+}
+
+/*end of adduser.php section*/

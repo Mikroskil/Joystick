@@ -52,10 +52,6 @@
 						<form method="post" action="" enctype="multipart/form-data">
 						<table width="900px">
 							<tr>
-								<td width="150px" align="left" valign="top"> ID </td>
-								<td width="100px"> <input type="text" maxlength="4" name="id"></td>
-							</tr>
-							<tr>
 								<td width="150px" valign="top" align="left">Image</td>
 								<td width="700px"><input type="file" name="file" id="file"/></td>
 							</tr>

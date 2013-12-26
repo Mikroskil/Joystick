@@ -5,31 +5,29 @@
 		<?php
 		require_once 'connect.php';
 		$no_kamar = $_GET['target'];
-		$pilihtabel=mysql_query("SELECT * FROM berita WHERE id='" . $id. "'");
+		$pilihtabel=mysql_query("SELECT * FROM berita WHERE id='" . $no_kamar. "'");
 		
 		$data=Array();
 		
 		$row = mysql_fetch_array($pilihtabel);
 		$data['gambar'] = $row['gambar'];
-		$path = "../image/" . $data["gambar"];
+		$path = "../img/" . $data["gambar"];
 		$data['id'] = $row['id'];
 		$data['judul']=$row['judul'];
 		$data['isi']=$row['isi'];
 		$data['tanggal']=$row['tanggal'];
 		$data['path']=$path;
 		
-		date_default_timezone_set('Asia/Jakarta');
-		$cek=true;
-		$gambar=$_POST['gambar'];
-		$id=$_POST['id'];
-		$judul=$_POST['judul'];
-		$isi=$_POST['isi'];
-		$tanggal = date("Y-m-d");
-
-		
 		$error="";
 		if(isset($_POST["update"]))
 		{
+				date_default_timezone_set('Asia/Jakarta');
+				$cek=true;
+				$gambar=$_POST['gambar'];
+				$id=$_POST['id'];
+				$judul=$_POST['judul'];
+				$isi=$_POST['isi'];
+					$tanggal = date("Y-m-d");
 				if($_POST[judul==""])
 					$error="Judul Belum Diisi";
 				else if($_POST[isi==""])
@@ -94,7 +92,7 @@
 	<body>
 		<div class="wrapper" id="wrapper">
 			<?php include_once ('header.php');?>
-			<div class="container" style="height:600px">
+			<div class="container" style="height:900px">
 				<?php include_once('sidemenu.php');?>
 				<div class="section confmargin">
 					<div class="sectionheader bottomline">Admin Page | Add News And Events</div>
@@ -107,7 +105,7 @@
 							</tr>
 							<tr>
 								<td width="150px" valign="top" align="left">Image</td>
-								<td width="700px"><img src="<?php echo $data["path"]?>" width="100" height="100"><br>
+								<td width="700px"><img src="<?php echo $path;?>" class="newsconimg"><br>
 									<input type="file" name="gambar"/></td>
 							</tr>
 							<tr>

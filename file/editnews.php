@@ -4,7 +4,7 @@
 		<link rel="stylesheet" href="../css/templates.css" type="text/css" />
 		<?php
 		require_once 'connect.php';
-		require_once 'session.php';
+		
 		$pilihtabel = mysql_query("SELECT * FROM berita ORDER BY tanggal DESC");
 		
 		while($row=mysql_fetch_array ($pilihtabel))
@@ -33,8 +33,8 @@
 									<td width="50px"> ID </td>
 									<td width="130px"> Tanggal </td>
 									<td width="200px"> Judul Berita </td>
-									<td width="80px"> &nbsp; </td>
-									<td width="80px"> &nbsp; </td>
+									<td width="80px">&nbsp;  </td>
+									<td width="80px">&nbsp;  </td>
 								</tr>
 								
 								<?php

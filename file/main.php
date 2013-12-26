@@ -25,7 +25,7 @@
 			<div class="slider">
 					<?php include_once ('slider.html')?>
 			</div>
-			<div class="container" style="height:700px">
+			<div class="container" style="height:900px">
 				<div class="section indexnewssec">
 					<div class="sectionheader indexnewssechead">
 						<b>NEWS AND EVENTS</b><a href="news.html" class="sectionheaderlink">all news</a>

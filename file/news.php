@@ -23,7 +23,7 @@
 		<div class="wrapper" id="wrapper">
 			<?php include_once ('header.php');?>
 			<div class="container" style="height:900px">
-				<div class="section newsseccon">
+				<div class="section newsdetailsec">
 					<div class="sectionheader bottomline">
 						<b>NEWS AND EVENTS</b>
 					</div>
