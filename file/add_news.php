@@ -12,7 +12,7 @@
 				{
 					date_default_timezone_set('Asia/Jakarta');
 					$judul = $_POST["judul"];
-					$id=$_POST['id'];
+					
 					$isi = $_POST["isiberita"];
 					$tanggal = date("Y-m-d");
 					$name       = $_FILES['file']['name'];  
