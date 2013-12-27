@@ -43,7 +43,7 @@
 									while(($row=mysql_fetch_array($pilihtabel)))
 									{
 										$i = $i + 1;
-										if ($row['no_kamar'] != 100)
+										if (($row['no_kamar'] != 100) & ($row['available'] != 1))
 										{
 											echo 
 												"<tr> 
