@@ -30,7 +30,7 @@
 									}
 									else
 									{
-										echo "<a href='userinfor.php?id=" . $_SESSION['no_kamar'] . " '>User Information</a>";
+										echo "<a href='userinfo.php?id=" . $_SESSION['no_kamar'] . " '>User Information</a>";
 									}
 									echo "<br><a href='logout.php'>Log Out</a>";
 								}

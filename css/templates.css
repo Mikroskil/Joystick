@@ -532,3 +532,18 @@ a:hover
 }
 
 /*end of adduser.php section*/
+
+/*userinfo.php section*/
+.userinfo
+{
+	width:600px;
+}
+
+.usermenu
+{
+	width:250px;
+	margin-left:5px;
+}
+
+
+/*end of userinfo.php section*/

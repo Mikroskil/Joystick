@@ -13,8 +13,8 @@
 					$temp2=$row['hargaapt'];
 					$temp3=$row['bfapt'];
 					$temp4=$row['nama_pemilik'];
-					$temp5=$row['spekapt'];
-					mysql_query("UPDATE apartemen SET tipeapt = '$temp' & hargaapt = '$temp2' & bfapt = '$temp3' & nama_pemilik = '$temp4' & spekapt = '$temp5'");
+					
+					mysql_query("UPDATE apartemen SET tipeapt = '$temp' & hargaapt = '$temp2' & bfapt = '$temp3' & nama_pemilik = '$temp4'");
 				}
 			}
 		?>
@@ -67,10 +67,6 @@
 								<tr>
 									<td>Nama Pemilik :</td>
 									<td><input type="text" name="nama_pemilik" /></td>
-								</tr>
-								<tr>
-									<td>Spef :</td>
-									<td><input type="text" name="spekapt" /></td>
 								</tr>
 								<tr>
 									<td></td>
