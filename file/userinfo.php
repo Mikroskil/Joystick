@@ -5,17 +5,6 @@
 		<?php
 			require_once "connect.php";
 			
-			if (isset($_POST['ubah_pass']))
-			{
-				$myquery = mysql_query("UPDATE apartemen SET password = " . $_POST['password'] . " WHERE no_kamar = " . $_POST['id']);
-				
-			}
-			
-			if (isset($_POST['ubah_email']))
-			{
-				$myquery = mysql_query("UPDATE apartemen SET email = " . $_POST['email'] . " WHERE no_kamar = " . $_POST['id']);
-			}
-			
 			$pilihtabel = mysql_query("SELECT * FROM apartemen WHERE no_kamar = " . $_GET['id'] );
 			
 			while($row=mysql_fetch_array ($pilihtabel))
@@ -46,27 +35,27 @@
 							<tr>
 								<td width="150px">No Kamar</td>
 								<td width="50px">:</td>
-								<td><input type="text" value="<?php echo $data['id'];?>" name="id" readonly></td>
+								<td><input type="text" value="<?php echo $data['id'];?>" readonly name="id"></td>
 							</tr>
 							<tr>
 								<td width="150px">Type Kamar</td>
 								<td width="50px">:</td>
-								<td><input type="text" value="<?php echo $data['tipe'];?>" name="tipe" readonly></td>
+								<td><input type="text" value="<?php echo $data['tipe'];?>" readonly name="tipe"></td>
 							</tr>
 							<tr>
 								<td width="150px">Nama Pemilik</td>
 								<td width="50px">:</td>
-								<td><input type="text" value="<?php echo $data['nama'];?>" name="nama" readonly></td>
+								<td><input type="text" value="<?php echo $data['nama'];?>" readonly name="nama"></td>
 							</tr>
 							<tr>
 								<td width="150px">Password</td>
 								<td width="50px">:</td>
-								<td><input type="password" value="<?php echo $data['pass'];?>" name="password"></td>
+								<td><input type="password" value="<?php echo $data['pass'];?>" readonly name="password"></td>
 							</tr>
 							<tr>
 								<td width="150px">Email</td>
 								<td width="50px">:</td>
-								<td><input type="text" value="<?php echo $data['email'];?>" name="email"></td>
+								<td><input type="text" value="<?php echo $data['email'];?>" readonly name="email"></td>
 							</tr>
 							<tr>
 								<td width="150px">Tagihan Listrik</td>
@@ -87,7 +76,7 @@
 						<b>User Menu</b>
 					</div>
 					<div>
-						<div><a href="">Ubah Informasi</a></div>
+						<div><a href="ubahinfo.php">Ubah Informasi</a></div>
 						<div><a href="">Pembayaran Tagihan</a></div>
 					</div>
 				</div>
