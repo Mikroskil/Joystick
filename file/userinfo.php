@@ -44,38 +44,38 @@
 						<table>
 							<form>
 							<tr>
-								<td>No Kamar</td>
-								<td>:</td>
+								<td width="150px">No Kamar</td>
+								<td width="50px">:</td>
 								<td><input type="text" value="<?php echo $data['id'];?>" name="id" readonly></td>
 							</tr>
 							<tr>
-								<td>Type Kamar</td>
-								<td>:</td>
+								<td width="150px">Type Kamar</td>
+								<td width="50px">:</td>
 								<td><input type="text" value="<?php echo $data['tipe'];?>" name="tipe" readonly></td>
 							</tr>
 							<tr>
-								<td>Nama Pemilik</td>
-								<td>:</td>
+								<td width="150px">Nama Pemilik</td>
+								<td width="50px">:</td>
 								<td><input type="text" value="<?php echo $data['nama'];?>" name="nama" readonly></td>
 							</tr>
 							<tr>
-								<td>Password</td>
-								<td>:</td>
+								<td width="150px">Password</td>
+								<td width="50px">:</td>
 								<td><input type="password" value="<?php echo $data['pass'];?>" name="password"></td>
 							</tr>
 							<tr>
-								<td>Email</td>
-								<td>:</td>
+								<td width="150px">Email</td>
+								<td width="50px">:</td>
 								<td><input type="text" value="<?php echo $data['email'];?>" name="email"></td>
 							</tr>
 							<tr>
-								<td>Tagihan Listrik</td>
-								<td>:</td>
+								<td width="150px">Tagihan Listrik</td>
+								<td width="50px">:</td>
 								<td><input type="text" value="<?php echo $data['listrik'];?>" readonly></td>
 							</tr>
 							<tr>
-								<td>Tagihan Air</td>
-								<td>:</td>
+								<td width="150px">Tagihan Air</td>
+								<td width="50px">:</td>
 								<td><input type="text" value="<?php echo $data['air'];?>" readonly></td>
 							</tr>
 							</form>
