@@ -64,16 +64,6 @@
 								<td><input type="text" value="<?php echo $data['email'];?>" name="email"></td>
 							</tr>
 							<tr>
-								<td width="150px">Tagihan Listrik</td>
-								<td width="50px">:</td>
-								<td><input type="text" value="<?php echo $data['listrik'];?>" readonly></td>
-							</tr>
-							<tr>
-								<td width="150px">Tagihan Air</td>
-								<td width="50px">:</td>
-								<td><input type="text" value="<?php echo $data['air'];?>" readonly></td>
-							</tr>
-							<tr>
 								<td></td><td></td>
 								<td><input type="submit" value="Save" name="ubah" />
 							</tr>
@@ -81,6 +71,7 @@
 						</table>
 					</div>
 				</div>
+				<?php require_once "usersidemenu.php";?>
 			</div>
 			
 			<?php 

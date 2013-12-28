@@ -71,15 +71,7 @@
 						</table>
 					</div>
 				</div>
-				<div class="section usermenu">
-					<div class="sectionheader bottomline">
-						<b>User Menu</b>
-					</div>
-					<div>
-						<div><a href="ubahinfo.php">Ubah Informasi</a></div>
-						<div><a href="">Pembayaran Tagihan</a></div>
-					</div>
-				</div>
+				<?php require_once "usersidemenu.php";?>
 			</div>
 			
 			<?php 
