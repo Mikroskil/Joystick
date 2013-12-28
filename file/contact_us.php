@@ -2,6 +2,12 @@
 	<head>
 		<title>SUVABEWE | Contact Us</title>
 		<link rel="stylesheet" href="../css/templates.css" type="text/css" />
+		<script type="text/javascript">
+			function berhasil()
+			{
+				alert("Terima kasih")
+			}
+		</script>
 	</head>
 	<body>
 		<div class="wrapper" id="wrapper">
@@ -43,7 +49,7 @@
 									<td><textarea  name="pesan" cols="60" rows="20"></textarea></td>
 								</tr>
 								<tr>
-									<td colspan="3" align="right"><input type="reset" value="Reset"> &nbsp;&nbsp;&nbsp;<input type = "submit" value = "Send">
+									<td colspan="3" align="right"><input type="reset" value="Reset"> &nbsp;&nbsp;&nbsp;<input type = "submit" value = "Send" onClick="berhasil()">
 									</td>
 								</tr>
 							</table>
