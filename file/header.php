@@ -18,12 +18,10 @@
 								}
 								else
 									echo "<a href='login.php' style='color:#FFFFFF'>Login</a>";
-							?>
 							
-							<div class="headerlogin" id="headerlogin">
-							<?php
 								if (isset($_SESSION['login']))
 								{
+									echo "<div class='headerlogin' id='headerlogin' style='height:40px'>";
 									if ($_SESSION['no_kamar'] == "100")
 									{
 										echo "<a href='admin.php'>Admin Page</a>";
@@ -36,7 +34,9 @@
 								}
 								else
 								{
-									echo "<form action='auth.php' method='post'>
+									
+									echo "<div class='headerlogin' id='headerlogin' style='height:160px'>
+										<form action='auth.php' method='post'>
 										<label>Apartment Number or E-mail</label> <br />
 										<input type='text' class='hltextfocus' name='no_kamar'/><br />
 										<br />
