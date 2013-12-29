@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Waktu pembuatan: 19. Desember 2013 jam 22:32
--- Versi Server: 5.1.41
--- Versi PHP: 5.3.1
+-- Generation Time: Dec 29, 2013 at 11:54 AM
+-- Server version: 5.1.41
+-- PHP Version: 5.3.1
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
@@ -18,13 +18,11 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 --
 -- Database: `suvabewe`
 --
-CREATE DATABASE `suvabewe` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `suvabewe`;
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `apartemen`
+-- Table structure for table `apartemen`
 --
 
 CREATE TABLE IF NOT EXISTS `apartemen` (
@@ -53,17 +51,19 @@ CREATE TABLE IF NOT EXISTS `apartemen` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `apartemen`
+-- Dumping data for table `apartemen`
 --
 
 INSERT INTO `apartemen` (`no_kamar`, `type_kamar`, `spec_kamar`, `password`, `nama_pemilik`, `email`, `available`, `harga`, `booked`, `booked_fee`, `booked_date`, `tagihan_listrik`, `tagihan_air`, `gambar_tidur1`, `gambar_tidur2`, `gambar_tidur3`, `gambar_makan`, `gambar_dapur`, `gambar_mandi`, `gambar_tamu`, `gambar_balkon`) VALUES
-(0, '', '', '123456', 'Admin', '', 0, 0, 0, 0, '0000-00-00', 0, 0, '', '', '', '', '', '', '', ''),
-(101, 'A', '', '1234', 'Sandy Usman Erry', '', 0, 0, 0, 0, '0000-00-00', 0, 0, '', '', '', '', '', '', '', '');
+(100, '', '', '123456', 'Admin', '', 0, 0, 0, 0, '0000-00-00', 0, 0, '', '', '', '', '', '', '', ''),
+(101, 'A', '', '1234', 'Sandy Usman Erry', '', 0, 0, 0, 0, '0000-00-00', 0, 0, '', '', '', '', '', '', '', ''),
+(102, 'A', '2 Kamar Tidur\r\n2 Kamar Mandi', '12345', 'Lisa', 'redixy_lisa@live.com', 0, 500000000, 0, 0, '0000-00-00', 0, 0, '', '', '', '', '', '', '', ''),
+(103, 'A', '2 Kamar Tidur\r\n2 Kamar Mandi', '', '', '', 1, 500000000, 1, 0, '0000-00-00', 0, 0, '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `berita`
+-- Table structure for table `berita`
 --
 
 CREATE TABLE IF NOT EXISTS `berita` (
@@ -73,19 +73,39 @@ CREATE TABLE IF NOT EXISTS `berita` (
   `isi` text NOT NULL,
   `tanggal` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
--- Dumping data untuk tabel `berita`
+-- Dumping data for table `berita`
 --
 
-INSERT INTO `berita` (`id`, `gambar`, `judul`, `isi`, `tanggal`) VALUES
-(1, '2013-11-30', 'Hello and Welcome to SUVABEWE', 'hafjldajfla', '2013-11-30');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `fasilitas`
+-- Table structure for table `contact`
+--
+
+CREATE TABLE IF NOT EXISTS `contact` (
+  `id` int(3) NOT NULL AUTO_INCREMENT,
+  `nama` text NOT NULL,
+  `email` text NOT NULL,
+  `subject` text NOT NULL,
+  `message` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `contact`
+--
+
+INSERT INTO `contact` (`id`, `nama`, `email`, `subject`, `message`) VALUES
+(1, 'Andi', 'lightmyfire@yahoo.com', 'The website is so cool', 'hey there, the feature on this website are amazing.. blablalblablaa');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `fasilitas`
 --
 
 CREATE TABLE IF NOT EXISTS `fasilitas` (
@@ -94,7 +114,23 @@ CREATE TABLE IF NOT EXISTS `fasilitas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `fasilitas`
+-- Dumping data for table `fasilitas`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `slide`
+--
+
+CREATE TABLE IF NOT EXISTS `slide` (
+  `gambar` text NOT NULL,
+  `pagelink` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `slide`
 --
 
 

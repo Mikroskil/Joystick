@@ -51,7 +51,7 @@
 							<tr>
 								<td width="150px">Nama Pemilik</td>
 								<td width="50px">:</td>
-								<td><input type="text" value="<?php echo $data['nama'];?>" readonly name="nama"</td>
+								<td><input type="text" value="<?php echo $data['nama'];?>" readonly name="nama"></td>
 							</tr>
 							<tr>
 								<td width="150px">Password</td>
