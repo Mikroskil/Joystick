@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 29, 2013 at 11:54 AM
+-- Generation Time: Dec 29, 2013 at 03:48 PM
 -- Server version: 5.1.41
 -- PHP Version: 5.3.1
 
@@ -93,14 +93,16 @@ CREATE TABLE IF NOT EXISTS `contact` (
   `subject` text NOT NULL,
   `message` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 ROW_FORMAT=FIXED AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `contact`
 --
 
 INSERT INTO `contact` (`id`, `nama`, `email`, `subject`, `message`) VALUES
-(1, 'Andi', 'lightmyfire@yahoo.com', 'The website is so cool', 'hey there, the feature on this website are amazing.. blablalblablaa');
+(1, 'Lisa', 'lisa@yahoo.com', 'Confirmed Payment', 'I have confirmed my payment, but seem like there is something wrong, because i don''t get any mail. Can you check my confirmation once again?'),
+(2, 'Andi', 'lightmyfire@yahoo.com', 'Great Website', 'The feature on this website are quite comprehensive. It also look so neat. It gives me best experience on surveying apartment online, and I can booked it to. It makes me satisfied! Thank you!!'),
+(3, 'Budi', 'budi@yahoo.com', 'Subscription Mail?', 'It''s quite interesting here, but can i got some subscription if there is new project?');
 
 -- --------------------------------------------------------
 

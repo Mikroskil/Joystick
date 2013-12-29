@@ -98,7 +98,6 @@ a:hover
 	margin:5px 0px 0px -5px;
 	padding:5px;
 	width:220px;
-	height:160px;
 	box-shadow: 0px 0px 5px #888888;
 	border-radius:0px 5px 5px 5px;
 	display:block;
@@ -498,7 +497,7 @@ a:hover
 	padding-top:2px;
 	font-size:16px;
 	color: #FFFFFF;
-	height:170px;
+	height:190px;
 	width:200px;
 	background-color:#2326fb;
 	border-color:#000099;

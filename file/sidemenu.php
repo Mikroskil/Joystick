@@ -6,5 +6,6 @@
 		<li><a href="vacant.php" class="adminmenu"> Edit Vacant Apartemen Data</a><br /></li>
 		<li><a href="add_news.php" class="adminmenu"> Add News </a><br></li>
 		<li><a href="editnews.php" class="adminmenu"> Edit News List </a><br></li>
+		<li><a href="showcontact.php" class="adminmenu"> Reply Contact Us </a><br /></li>
 	</ul>
 </div>
