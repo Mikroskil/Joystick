@@ -2,12 +2,32 @@
 	<head>
 		<title>SUVABEWE | Apartment</title>
 		<link rel="stylesheet" href="../css/templates.css" type="text/css" />
+		<script type="text/javascript">
+  function drawSquare () {
+    var canvas = document.getElementById('draw-square');
+    if (canvas.getContext) {
+      var context = canvas.getContext('2d');
+      
+      context.fillStyle = "rgb(150,29,28)";
+      context.moveTo(0,0);
+	  context.lineTo(465,0);
+	  context.lineTo(465,340);
+	  context.lineTo(235,340);
+	  context.lineTo(235,440);
+	  context.lineTo(0,440);
+	  context.closePath();
+	   context.fill();
+    } else {
+      // put code for browsers that don't support canvas here
+    }
+  } </script> 
 	</head>
-	<body>
+	<body onLoad="drawSquare()">
 		<div class="wrapper" id="wrapper">
 			<?php include_once ('header.php');?>
-			<div>
-					<img class="floorplanimg"  src="../img/1_first_floor.jpg"/>
+			<div style="background-image:url('../img/floorplanedit.png');widht:1000; height:400;">
+					<a href="test.php"><canvas id="draw-square" width="500" height="500" style="z-index:100; position:relative;"></canvas></a>
+	</div>
 			</div>
 			<div class="container" style="height:700px">
 				<div class="section apartmentsec">

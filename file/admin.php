@@ -24,11 +24,10 @@
 								<tr>
 									<td width="80px"> No Kamar </td>
 									<td width="50px"> Tipe </td>
-									<td width="120px"> Harga </td>
-									<td width="120px"> Booking Fee </td>
+									<td width="150px" align='right'> Harga </td>
+									<td width="150px" align='right'> Booking Fee </td>
 									<td width="100px"> Status </td>
-									<td width="120px"> Pemilik </td>
-									<td width="150px"> Spef </td>
+									<td width="150px"> Pemilik </td>
 									<td width="100px"> Available </td>
 									<td></td>
 								</tr>
@@ -52,8 +51,8 @@
 												"<tr> 
 												<td> " . $row['no_kamar'] . "</td>
 												<td> " . $row['type_kamar'] . "</td>
-												<td> " . $row['harga'] . "</td>
-												<td> " . $row['booked_fee'] . "</td>
+												<td align='right'> Rp." . $row['harga'] . ",00</td>
+												<td align='right'> Rp." . $row['booked_fee'] . ",00</td>
 												<td>
 												";  
 												
@@ -70,7 +69,7 @@
 												"
 												</td>
 												<td>" . $row['nama_pemilik'] . "</td>
-												<td>" . $row['spec_kamar'] . "</td>
+												
 												<td>" ;
 												if($temp1==0)
 													echo "NO";

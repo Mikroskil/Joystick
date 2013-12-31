@@ -17,22 +17,31 @@
 					$tanggal = date("Y-m-d");
 					$name       = $_FILES['file']['name'];  
 					$temp_name  = $_FILES['file']['tmp_name'];  
-					if(isset($name)){
-						if(!empty($name)){      
+					if(isset($name))
+					{
+						if(!empty($name))
+						{      
 							$imageName = time().'-'.$_FILES["file"]["name"];
 							$path = pathinfo(__file__);
 							
 							$img='..\img\\'.$imageName    ;
-							if(move_uploaded_file($temp_name, $img)){
-								echo 'uploaded';
+							if(move_uploaded_file($temp_name, $img))
+							{
+								$status=  'uploaded';
 							}
-						} }  else {
-							echo 'uploaded failed';
+						 	
+						}
+						else 
+						{
+							$status =  'uploaded failed';
+							$imageName="";
 						} 
-					$pilihtabel = mysql_query("SELECT * FROM berita");					
-					$query=mysql_query("INSERT INTO berita VALUES 						
-					(NULL, '$imageName','$judul','$isi','$tanggal')");
+						
+						$pilihtabel = mysql_query("SELECT * FROM berita");					
+						$query=mysql_query("INSERT INTO berita VALUES 						
+						(NULL, '$imageName','$judul','$isi','$tanggal')");
 					
+					}
 				}
 			}
 		?>

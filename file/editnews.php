@@ -12,8 +12,12 @@
 			if(isset($_POST [$row['id']]))
 			{
 				$temp=$row['id'];
-				$path = "../image/" . $row['gambar'];
-				unlink($path);
+				if ($row['gambar'] != "")
+				{
+					$path = "../img/" . $row['gambar'];
+					unlink($path);
+					
+				}
 				mysql_query("DELETE FROM berita WHERE id='$temp'");
 			}
 		}

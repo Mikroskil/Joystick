@@ -33,7 +33,7 @@
             		}
 					else
 					{
-						$error= 'Sorry, something must be go wrong.';
+						$error= 'Sorry, something must go wrong.';
 					}
 				}
 			}
@@ -42,7 +42,7 @@
 	<body>
 		<div class="wrapper" id="wrapper">
 			<?php include_once ('header.php');?>
-			<div class = "container" style="height:730px">
+			<div class = "container" style="height:750px">
 				<div class="section contactsec">
 					<div class="sectionheader bottomline">
 						<b>CONTACT US</b><br />
@@ -58,7 +58,7 @@
 									<td colspan="2">For Further Information</td>
 								</tr>
 								<tr rowspan="2">
-									<td colspan="2"> <font color="#FF0000"><?php if ($error != "") echo $error; ?> </font></td>
+									<td colspan="2"> <font color="#FF0000"><?php if ($error != "") echo $error; ?> &nbsp;</font></td>
 								</tr>
 								<tr>
   									<td>Name</td>

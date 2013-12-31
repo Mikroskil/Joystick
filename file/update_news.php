@@ -39,18 +39,22 @@
 					}
 					else
 					{
+						$tanggal = date("Y-m-d");
 						$filename = $_FILES["gambar"]["name"];
 						$extensi = $_FILES["gambar"]["type"];
 						if (substr_count($extensi, 'image') > 0)
 						{
 						
-							$lokasi = "../img/" . $data["gambar"];
-							unlink($lokasi);
-								
-							$path = "../img/" . $data["gambar"];
+							if ($data["gambar"] != "")
+							{
+								$lokasi = "../img/" . $data["gambar"];
+								unlink($lokasi);
+							}
+							$imgName = time().'-'.$_FILES["gambar"]["name"];
+							$path = "../img/" . $imgName;
 							move_uploaded_file($_FILES["gambar"]["tmp_name"], $path);
 							
-							$gambar =  $data['gambar'];
+							$gambar =  $imgName;
 							$cek = true;
 						}
 						else
@@ -89,7 +93,7 @@
 		
 		mysql_close();
 	?>
-	<title>SUVABEWE | Edit Berita " . <?php echo $_GET["judul"] ?> . "</title>
+	<title>SUVABEWE | Edit Berita</title>
 	</head>
 	<body>
 		<div class="wrapper" id="wrapper">
@@ -107,7 +111,7 @@
 							</tr>
 							<tr>
 								<td width="150px" valign="top" align="left">Image</td>
-								<td width="700px"><img src="<?php echo $path;?>" class="newsconimg"><br>
+								<td width="700px"><img src="../img/<?php echo $data['gambar'];?>" class="newsconimg"><br>
 									<input type="file" name="gambar"></td>
 							</tr>
 							<tr>

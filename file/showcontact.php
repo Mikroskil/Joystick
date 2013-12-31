@@ -4,7 +4,7 @@
 		<link rel="stylesheet" href="../css/templates.css" type="text/css" />
 		<?php
 		require_once 'connect.php';
-		
+		$error="";
 		$pilihtabel=mysql_query("SELECT * FROM contact");
 		while ($row = mysql_fetch_array($pilihtabel))
 			{
@@ -12,7 +12,7 @@
 				{
 					$temp = $row['id'];
 					mysql_query("DELETE FROM contact WHERE id='$temp'");
-					$error="Data " . $id . " berhasil dihapus!";
+					$error="Data berhasil dihapus!";
 				}
 			}
 		?>
@@ -29,6 +29,7 @@
 					
 					<div class="sectioncontent ">
 						<table>
+							<?php echo "<font color='red'>" . $error . "</font>";?>
 							<form method="post">
 								<tr>
 									<td width="80px"> ID </td>
@@ -48,7 +49,7 @@
 										$temp=$row['id'];
 										$i = $i + 1;
 										echo 
-										"<font color='red'>" . $error . "</font>
+										"
 										<tr> 
 										<td> " . $row['id'] . "</td>
 										<td> " . $row['nama'] . "<br> (" . $row['email'] . ")</td>
