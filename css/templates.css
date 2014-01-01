@@ -255,6 +255,11 @@ a:hover
 	margin-right:10px;
 }
 
+.apartmentfloor
+{
+	width:10;
+}
+
 .apartmentseccon
 {
 	width:350px;
@@ -268,25 +273,25 @@ a:hover
 {
 	width:200px;
 	margin:10px 5px 10px 10px;
-	float:left;
+	
 	padding:5px;
 	height:200px;
 }
 
-.saleapartmentsec
+.sideapartmentsec
 {
 	width:350px;
 	padding:5px;
 }
 
-.saleaparmentimg
+.sideaparmentimg
 {
 	width:100px;
 	height:100px;
 	margin-right:10px;
 }
 
-.saleaparmentcondet
+.sideaparmentcondet
 {
 	width:220px;
 	height:140px;
@@ -295,7 +300,7 @@ a:hover
 	float:left;
 }
 
-.saleapartmentseccon
+.sideapartmentseccon
 {
 	height:150px;
 	margin-bottom:5px;
