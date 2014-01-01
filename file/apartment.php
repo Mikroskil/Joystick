@@ -142,8 +142,8 @@
 					<div class="sectionheader bottomline">
 						<b>APARTMENT DETAIL</b><a id="seedetail" class="sectionheaderlink">see more detail</a>
 					</div>
-					<div class="sectioncontent apartmentsecimg">
-						<img align="middle" id="gambar"/>
+					<div class="sectioncontent apartmentsecimgcon">
+						<img align="middle" id="gambar" class="apartmentsecimg"/>
 					</div>
 					<div class="sectioncontent apartmentseccon">
 						<table>
@@ -222,7 +222,10 @@
 					
 				</div>
 			</div>
-			<?php include_once ('footer.html');?>
+			<?php 
+				mysql_close();
+				include_once ('footer.html');
+			?>
 		</div>
 	</body>
 </html>

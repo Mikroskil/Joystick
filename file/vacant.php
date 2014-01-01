@@ -16,6 +16,9 @@
 					<table>
 						<tr align='center'>	
 						<th width='100'>No Kamar</th>
+						<th width='30'>Tipe</th>
+						<th width='150'>Harga</th>
+						<th width='150'>Booked Fee</th>
 						<th>Booked</th>
 						<th>&nbsp;</th>
 						</tr>
@@ -28,14 +31,17 @@
 							{
 							  echo "<tr align='center'>";
 							  echo "<form action='editvacant.php' method='get'><td><input type='text' size='1' name='no_kamar' readonly value='".$row['no_kamar']."'></td>";
-							  if ($row['booked']=='100')
-							  {
-									echo "<td><input type='checkbox' checked='checked' disabled='disabled' value='1'></td>";
-							  }
+							  	echo "<td>" . $row['type_kamar'] . "</td>";
+							  echo "<td align='right'>Rp." . $row['harga'] . ",00</td>";
+							  echo "<td  align='right'>Rp." . $row['booked_fee'] . ",00</td>";
+							  echo "<td><input type='checkbox' disabled='disabled' value='";
+							  if ($row['booked'] == 1)
+							  	echo 1 . "checked='checked'";
 							  else
-							  {
-									echo "<td><input type='checkbox' disabled='disabled' value='0'></td>";
-							  }
+							  	echo 0;
+								
+							  echo "'></td>";
+							  
 	
 							  echo "<td><input type='submit' value='edit'></td>";
 							  echo "</form></tr>";
