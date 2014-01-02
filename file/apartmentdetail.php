@@ -3,6 +3,12 @@
 		<title>SUVABEWE | Apartment</title>
 		<link rel="stylesheet" href="../css/templates.css" type="text/css" /></head>
 		<?php
+			if (isset($_POST['booking']))
+			{
+				header('Location:bookingvalid.php?id=' . $_GET['id']);
+			}
+		
+		
 			require_once "connect.php";
 			$no = $_GET['id'];
 			$pilihtabel = mysql_query("SELECT * FROM apartemen WHERE no_kamar = '$no'");
@@ -12,7 +18,9 @@
 				$data['id'] = $row['no_kamar'];
 				$data['tipe'] = $row['type_kamar'];
 				$data['harga'] = $row['harga'];
+				$data['status'] = $row['available'];
 				$data['booked'] = $row['booked'];
+				$data['booked_fee'] = $row['booked_fee'];
 				$data['tidur1'] = $row['gambar_tidur1'];
 				$data['tidur2'] = $row['gambar_tidur2'];
 				$data['tidur3'] = $row['gambar_tidur3'];
@@ -31,7 +39,7 @@
 			else if ($data['tipe'] == 'B')
 			{
 				$rowspan = 8;
-				$height = 850;
+				$height = 950;
 			}
 			else if ($data['tipe'] == 'C')
 			{
@@ -63,9 +71,28 @@
 								<td><?php echo $data['tipe'];?></td>
 							</tr>
 							<tr>
+								<td>Status</td>
+								<td>:</td>
+								<td>
+									<?php 
+										if ($data['status'] == 0)
+											echo "SOLD";
+										else if ($data['booked'] == 1)
+											echo "BOOKED";
+										else
+											echo "VACANT"; 
+									?>
+								</td>
+							</tr>
+							<tr>
 								<td>Harga</td>
 								<td>:</td>
 								<td>Rp.<?php echo $data['harga'];?>,00</td>
+							</tr>
+							<tr>
+								<td>Booking Fee</td>
+								<td>:</td>
+								<td>Rp.<?php echo $data['booked_fee'];?>,00</td>
 							</tr>
 							<tr valign="top">
 								<td>Spesifikasi</td>
@@ -85,6 +112,16 @@
 									Dapur<br>
 									Kamar Mandi<br>
 									Balkon
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<form method="post">
+										<?php
+											if (($data['status'] != 0) & ($data['booked'] != 1))
+												echo "<input type='submit' name='booking' value='BOOK'>";
+										?>
+									</form>
 								</td>
 							</tr>
 						</table>

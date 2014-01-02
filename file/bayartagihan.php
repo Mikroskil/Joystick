@@ -5,15 +5,10 @@
 		<?php
 			require_once "connect.php";
 			$error="";
-			if (isset($_POST['ubah']))
+			if (isset($_POST['bayar']))
 			{
-				$id=$_POST['id'];
-				$pass=$_POST['password'];
-				$email=$_POST['email'];
-				if ($_POST['password'] != $_POST['repassword'])
-					$error = "Confirm password tidak sama dengan password";
-				else
-					$myquery = mysql_query("UPDATE apartemen SET password = '$pass', email = '$email' WHERE no_kamar = '$id'");
+				$id=$_GET['id'];
+				$myquery = mysql_query("UPDATE apartemen SET tagihan_listrik = 0, tagihan_air = 0 WHERE no_kamar = '$id'");
 				
 			}
 			
@@ -56,28 +51,18 @@
 								<td><input type="text" value="<?php echo $data['tipe'];?>" readonly name="tipe"></td>
 							</tr>
 							<tr>
-								<td width="150px">Nama Pemilik</td>
+								<td width="150px">Tagihan Listrik</td>
 								<td width="50px">:</td>
-								<td><input type="text" value="<?php echo $data['nama'];?>" readonly name="nama"></td>
+								<td><input type="text" value="<?php echo $data['listrik'];?>" readonly></td>
 							</tr>
 							<tr>
-								<td width="150px">Password</td>
+								<td width="150px">Tagihan Air</td>
 								<td width="50px">:</td>
-								<td><input type="password" value="<?php echo $data['pass'];?>" name="password"></td>
-							</tr>
-							<tr>
-								<td width="150px">Confirm Password</td>
-								<td width="50px">:</td>
-								<td><input type="password" value="<?php echo $data['pass'];?>" name="repassword"></td>
-							</tr>
-							<tr>
-								<td width="150px">Email</td>
-								<td width="50px">:</td>
-								<td><input type="text" value="<?php echo $data['email'];?>" name="email"></td>
+								<td><input type="text" value="<?php echo $data['air'];?>" readonly></td>
 							</tr>
 							<tr>
 								<td></td><td></td>
-								<td><input type="submit" value="Save" name="ubah" />
+								<td><input type="submit" value="Bayar" name="bayar" />
 							</tr>
 							</form>
 						</table>

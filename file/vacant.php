@@ -34,13 +34,12 @@
 							  	echo "<td>" . $row['type_kamar'] . "</td>";
 							  echo "<td align='right'>Rp." . $row['harga'] . ",00</td>";
 							  echo "<td  align='right'>Rp." . $row['booked_fee'] . ",00</td>";
-							  echo "<td><input type='checkbox' disabled='disabled' value='";
+							  echo "<td><input type='checkbox' disabled='disabled' ";
 							  if ($row['booked'] == 1)
-							  	echo 1 . "checked='checked'";
-							  else
-							  	echo 0;
+							  	echo "checked";
+							
 								
-							  echo "'></td>";
+							  echo "></td>";
 							  
 	
 							  echo "<td><input type='submit' value='edit'></td>";

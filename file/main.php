@@ -4,6 +4,11 @@
 		<link rel="stylesheet" href="../css/templates.css" type="text/css" />
 		</script>
 		<?php
+			if (isset($_POST['booking']))
+			{
+				if ($_POST['kamar'] != '')
+				header('Location:bookingvalid.php?id=' . $_POST['kamar']);
+			}
 			require_once 'connect.php';
 			$pilihtabel = mysql_query("SELECT * FROM berita ORDER BY tanggal DESC");
 			$berita = Array();
@@ -16,6 +21,13 @@
 					$berita[$n]['isi'] = $row['isi'];
 					$berita[$n]['tanggal'] = $row['tanggal'];
 					$n = $n + 1;
+			}
+			$c =0;
+			$pilihtabel = mysql_query("SELECT * FROM apartemen WHERE available <> 0 AND booked <> 1");
+			while ($row = mysql_fetch_array($pilihtabel))
+			{
+					$data[$c] = $row['no_kamar'];
+					$c = $c + 1;
 			}
 		?>
 	</head>
@@ -46,6 +58,28 @@
 						
 					?>
 					
+				</div>
+				<div class="section booksec">
+					<div class="sectionheader">
+						BOOKING APARTMENT	
+					</div>
+					<div class="sectioncontent bookseccon">
+						<div class="booksubsec">ROOM</div>
+						<form method="post">
+							<div class="booksubsec">
+									<select name="kamar">
+										<option selected="selected" value=''>-----Pilih Apartemen-----</option>
+										<?php
+											for ($i = 0 ; $i < $c; $i++)
+												echo "<option value='" .  $data[$i]. "'>" .  $data[$i] . "</option>";
+										?>
+									</select>
+							</div>
+							<div class="booksubsec" style="text-align:center;">
+								<input type="Submit" value="BOOK" name="booking" class="booksecbutton">
+							</div>
+						</form>
+					</div>
 				</div>
 			</div>
 			<?php 

@@ -13,6 +13,8 @@
 				$data['tipe'] = $row['type_kamar'];
 				$data['harga'] = $row['harga'];
 				$data['booked'] = $row['booked'];
+				$data['booked_fee'] = $row['booked_fee'];
+				$data['booked_date'] = $row['booked_date'];
 				$data['tidur1'] = $row['gambar_tidur1'];
 				$data['tidur2'] = $row['gambar_tidur2'];
 				$data['tidur3'] = $row['gambar_tidur3'];
@@ -26,17 +28,17 @@
 			if ($data['tipe'] == 'A')
 			{
 				$rowspan = 7;
-				$height = 1050;
+				$height = 1200;
 			}
 			else if ($data['tipe'] == 'B')
 			{
 				$rowspan = 8;
-				$height = 1150;
+				$height = 1250;
 			}
 			else if ($data['tipe'] == 'C')
 			{
 				$rowspan = 9;
-				$height = 1300;
+				$height = 1400;
 			}
 					
 			function upload_gambar($nama)
@@ -87,16 +89,27 @@
 					$harga = $_POST['harga'];
 					
 				if ($_POST['booked'] == "")
-					$booked = 0;
+					$booked_fee = 0;
 				else
-					$booked = $_POST['booked'];
+					$booked_fee = $_POST['booked'];
 				
 					$id = $data['id'];
 					$tidur1 = upload_gambar("tidur1");
 					
+				if (isset($_POST['status']))
+				{
+					$booked = 1;
+					$tanggal = $data['booked_date'];
+				}
+				else
+				{
+					$booked = 0;
+					$tanggal = "0000-00-00";
+				}
+					
 					if ($cek)
 						$edit=mysql_query("UPDATE apartemen
-						SET harga='$harga', booked='$booked', gambar_tidur1='$tidur1'
+						SET harga='$harga', booked = '$booked' , booked_fee='$booked_fee', booked_date='$tanggal', gambar_tidur1='$tidur1'
 						WHERE no_kamar='$id'
 						");	
 					
@@ -143,6 +156,8 @@
 				$data['tipe'] = $row['type_kamar'];
 				$data['harga'] = $row['harga'];
 				$data['booked'] = $row['booked'];
+				$data['booked_fee'] = $row['booked_fee'];
+				$data['booked_date'] = $row['booked_date'];
 				$data['tidur1'] = $row['gambar_tidur1'];
 				$data['tidur2'] = $row['gambar_tidur2'];
 				$data['tidur3'] = $row['gambar_tidur3'];
@@ -221,14 +236,37 @@
 								<td><input type="text" name="harga"  value ="<?php echo $data['harga'];?>"></td>
 							</tr>
 							<tr>
-								<td wdith="100">Booked Status</td>
+								<td wdith="100">Booked</td>
 								<td>:</td>
-								<td><input type="text" name="booked" value ="<?php echo $data['booked'];?>"></td>
+								<td><input type="checkbox" name="status" <?php if ($data['booked'] != 0) echo "checked";?>></td>
+							</tr>
+							<tr>
+								<td wdith="100">Booked Date</td>
+								<td>:</td>
+								<td><input type="text" name="booked_date" value ="<?php echo $data['booked_date'];?>" disabled>
+									
+									<?php
+										if ($data['booked'] != 0)
+										{
+											$today = date("Y-m-d");
+											$sub = strtotime($today) - strtotime($data['booked_date']);
+											$due = (int)($sub/(60*60*24));
+											
+											if ($due <= 15)
+												echo "<font color='00ff00'>Due " .  $due . " days</font>";
+											else
+												echo "<font color='ff0000'>Due " .  $due . " days</font>";
+										}
+										
+										
+									?>
+									
+								</td>
 							</tr>
 							<tr>
 								<td wdith="100">Booked Fee</td>
 								<td>:</td>
-								<td><input type="text" name="booked" value ="<?php echo $data['booked'];?>"></td>
+								<td><input type="text" name="booked" value ="<?php echo $data['booked_fee'];?>"></td>
 							</tr>
 							<tr align="center">
 								<td colspan="3"><input type="submit" value="Edit" name="edit"></td>
