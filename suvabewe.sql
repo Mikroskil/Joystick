@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 29, 2013 at 03:48 PM
+-- Generation Time: Jan 08, 2014 at 02:21 PM
 -- Server version: 5.1.41
 -- PHP Version: 5.3.1
 
@@ -58,7 +58,13 @@ INSERT INTO `apartemen` (`no_kamar`, `type_kamar`, `spec_kamar`, `password`, `na
 (100, '', '', '123456', 'Admin', '', 0, 0, 0, 0, '0000-00-00', 0, 0, '', '', '', '', '', '', '', ''),
 (101, 'A', '', '1234', 'Sandy Usman Erry', '', 0, 0, 0, 0, '0000-00-00', 0, 0, '', '', '', '', '', '', '', ''),
 (102, 'A', '2 Kamar Tidur\r\n2 Kamar Mandi', '12345', 'Lisa', 'redixy_lisa@live.com', 0, 500000000, 0, 0, '0000-00-00', 0, 0, '', '', '', '', '', '', '', ''),
-(103, 'A', '2 Kamar Tidur\r\n2 Kamar Mandi', '', '', '', 1, 500000000, 1, 0, '0000-00-00', 0, 0, '', '', '', '', '', '', '', '');
+(104, 'A', '', '', '', '', 1, 500000000, 0, 0, '0000-00-00', 0, 0, '104-tidur1.jpg', '', '', '104-makan.jpg', '104-dapur.jpg', '104-mandi.jpg', '104-tamu.jpg', '104-balkon.jpg'),
+(105, 'A', '', '', '', '', 1, 500000000, 0, 0, '0000-00-00', 0, 0, '105-tidur1.jpg', '', '', '105-makan.jpg', '105-dapur.jpg', '105-mandi.jpg', '105-tamu.jpg', '105-balkon.jpg'),
+(106, 'A', '', '', '', '', 1, 500000000, 0, 0, '0000-00-00', 0, 0, '106-tidur1.jpg', '', '', '106-makan.jpg', '106-dapur.jpg', '106-mandi.jpg', '106-tamu.jpg', '106-balkon.jpg'),
+(107, 'B', '', '', '', '', 1, 650000000, 0, 0, '0000-00-00', 0, 0, '107-tidur1.jpg', '107-tidur2.jpg', '', '107-makan.jpg', '107-dapur.jpg', '107-mandi.jpg', '107-tamu.jpg', '107-balkon.jpg'),
+(108, 'B', '', '', '', '', 1, 650000000, 0, 0, '0000-00-00', 0, 0, '108-tidur1.jpg', '108-tidur2.jpg', '', '108-makan.jpg', '108-dapur.jpg', '108-mandi.jpg', '108-tamu.jpg', '108-balkon.jpg'),
+(109, 'C', '', '', '', '', 1, 850000000, 0, 0, '0000-00-00', 0, 0, '109-tidur1.jpg', '109-tidur2.jpg', '109-tidur3.jpg', '109-makan.jpg', '109-dapur.jpg', '109-mandi.jpg', '109-tamu.jpg', '109-balkon.jpg'),
+(110, 'C', '', '', '', '', 1, 950000000, 0, 0, '0000-00-00', 0, 0, '110-tidur1.jpg', '110-tidur2.jpg', '110-tidur3.jpg', '110-makan.jpg', '110-dapur.jpg', '110-mandi.jpg', '110-tamu.jpg', '110-balkon.jpg');
 
 -- --------------------------------------------------------
 
