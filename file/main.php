@@ -53,7 +53,7 @@
 							{
 								echo "<img class='newsimg' src='../img/".$berita[$i]['gambar']."'/>";
 							}
-							echo "<div class='newscon'>". $berita[$i]['isi'] . "</div></div>";
+							echo "<div class='newscon'>". str_replace("\n","<br>",$berita[$i]['isi']) . "</div></div>";
 						}
 						
 					?>
@@ -67,7 +67,7 @@
 						<div class="booksubsec">ROOM</div>
 						<form method="post">
 							<div class="booksubsec">
-									<select name="kamar">
+									<select name="kamar" <?php if (isset($_SESSION['login'])) echo "disabled";?>>
 										<option selected="selected" value=''>-----Pilih Apartemen-----</option>
 										<?php
 											for ($i = 0 ; $i < $c; $i++)
@@ -76,7 +76,7 @@
 									</select>
 							</div>
 							<div class="booksubsec" style="text-align:center;">
-								<input type="Submit" value="BOOK" name="booking" class="booksecbutton">
+								<input type="Submit" value="BOOK" name="booking" class="booksecbutton" <?php if (isset($_SESSION['login'])) echo "disabled";?>>
 							</div>
 						</form>
 					</div>

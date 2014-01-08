@@ -28,11 +28,11 @@
 				document.getElementById("no_kamar").innerHTML = n ;
 				document.getElementById("tipe_kamar").innerHTML = tipe[i][j];
 				if (status[i][j] == 0)
-					document.getElementById("status").innerHTML = "SOLD";
+					document.getElementById("status").innerHTML = "<font color='#BB0000'>SOLD</font>";
 				else if (status[i][j] == 1)
-					document.getElementById("status").innerHTML = "VACANT";
+					document.getElementById("status").innerHTML = "<font color='#00BB00'>VACANT</font>";
 				else if (status[i][j] == 2)
-					document.getElementById("status").innerHTML = "BOOKED";
+					document.getElementById("status").innerHTML = "<font color='#BBBB00'>BOOKED</font>";
 				document.getElementById("harga").innerHTML = harga[i][j];
 				document.getElementById("gambar").src = "../img/" + gmbr[i][j];
 				document.getElementById("seedetail").href = "apartmentdetail.php?id=" + (n);
@@ -41,6 +41,7 @@
 			function setPage(i)
 			{
 				page = i;
+				document.getElementById("lantai").innerHTML = "FLOOR " + i + "F";
 				document.getElementById("room1").href="apartmentdetail.php?id=" + (page*100 + 1);
 				document.getElementById("room1").onmouseover = new Function('tampil(page*100+1);');
 				document.getElementById("room2").href="apartmentdetail.php?id=" + (page*100 + 2);
@@ -107,7 +108,7 @@
 					
 				?>
 			</script>
-			<div >
+			<div style="margin-top:5px;margin-bottom:5px;">
 					<!--<img src="../img/floorplanedit.png" usemap="#peta" class="map maphilighted" >
 					<map name="peta">
 						<area shape="poly" coords="85,85 , 320,85, 320,175 , 200,175 , 200,200, 85,200" href="test.php" data-maphilight="{&quot;stroke&quot;:false,&quot;fillColor&quot;:&quot;00FF00&quot;,&quot;fillOpacity&quot;:0.6,&quot;alwaysOn&quot;:true}" onCLick="pergi()">
@@ -119,6 +120,7 @@
 						<area shape="poly" coords="500,275 , 500,370, 325,370 , 320,225 , 400,225, 400, 275" href="test.php" data-maphilight="{&quot;stroke&quot;:false,&quot;fillColor&quot;:&quot;00FF00&quot;,&quot;fillOpacity&quot;:0.6,&quot;alwaysOn&quot;:true}">
 						<area shape="poly" coords="325,315 , 85,315, 85,200 , 200,200 , 200,225, 325, 225" href="test.php" data-maphilight="{&quot;stroke&quot;:false,&quot;fillColor&quot;:&quot;00FF00&quot;,&quot;fillOpacity&quot;:0.6,&quot;alwaysOn&quot;:true}">
 					</map> -->
+					<div id="lantai" class="sectionheader bottomline"></div>
 					<img src="../img/floorplanedit.png" usemap="#peta" >
 					<map name="peta">
 						<area id="room1" shape="poly" coords="85,85 , 320,85, 320,175 , 200,175 , 200,200, 85,200" href="apartmentdetail.php?id=101" >
@@ -131,9 +133,13 @@
 						<area id="room8" shape="poly" coords="325,315 , 85,315, 85,200 , 200,200 , 200,225, 325, 225"href="apartmentdetail.php?id=108">
 					</map>
 					<div>
-						FLOOR 
-						<button class="apartmentfloor" onClick="setPage(1)">1</button>
-						<button class="apartmentfloor" onClick="setPage(2)">2</button>
+						FLOOR : 
+						<?php
+							for ($i = 1; $i <= 12; $i++)
+							{
+								echo "<button class='apartmentfloor' onClick='setPage(" . $i . ")'>" . $i . "</button>";
+							}
+						?>
 					</div>
 	</div>
 			
@@ -178,7 +184,7 @@
 				</div>
 				<div class="section sideapartmentsec">
 					<div class="sectionheader bottomline">
-						<b>SALE</b>
+						<b>VACANT</b>
 					</div>
 					<?php
 						$c = 0;

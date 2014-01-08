@@ -73,15 +73,16 @@
 							<tr>
 								<td>Status</td>
 								<td>:</td>
-								<td>
+								<td><font color='
 									<?php 
 										if ($data['status'] == 0)
-											echo "SOLD";
+											echo "#BB0000'>SOLD";
 										else if ($data['booked'] == 1)
-											echo "BOOKED";
+											echo "#BBBB00'>BOOKED";
 										else
-											echo "VACANT"; 
+											echo "#00BB00'>VACANT"; 
 									?>
+									</font>
 								</td>
 							</tr>
 							<tr>
@@ -119,7 +120,7 @@
 									<form method="post">
 										<?php
 											if (($data['status'] != 0) & ($data['booked'] != 1))
-												echo "<input type='submit' name='booking' value='BOOK'>";
+												echo "<input type='submit' name='booking' class='aptbookbutton' value='BOOK'>";
 										?>
 									</form>
 								</td>
