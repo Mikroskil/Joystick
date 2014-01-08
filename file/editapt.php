@@ -5,14 +5,11 @@
 		<?php
 		require_once 'connect.php';
 		$pilihtabel=mysql_query("SELECT * FROM apartemen");
-		
+		$c = 0;
 		while($row=mysql_fetch_array ($pilihtabel))
 		{
-			if(isset($_POST [$row['no_kamar']]))
-			{
-				$temp=$row['no_kamar'];
-				mysql_query("DELETE FROM apartemen WHERE no_kamar='$temp'");
-			}
+			if (($row['no_kamar'] != 100) & ($row['available'] != 1))
+				$c = $c + 1;
 		}
 		?>
 	</head>
@@ -20,7 +17,7 @@
 		<div class="wrapper" id="wrapper">
 			<?php include_once ('header.php');?>
 			<?php include_once('sidemenu.php');?>
-			<div class="container confmargin" style="height:900px">
+			<div class="container confmargin" style="height:<?php echo (150+$c*30);?>px">
 				
 				<div class="section showapt">
 					<div class="sectionheader bottomline">

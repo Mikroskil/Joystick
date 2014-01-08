@@ -34,7 +34,7 @@
 							echo "<img class='newsconimg' src='../img/" . $berita['gambar'] . "' >";
 					?>
 					<div class="sectioncontent">
-						<?php echo $berita['isi']; ?>
+						<?php echo str_replace("\n","<br>",$berita['isi']); ?>
 					</div>
 				</div>
 			</div>

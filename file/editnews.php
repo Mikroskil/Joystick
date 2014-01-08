@@ -6,7 +6,7 @@
 		require_once 'connect.php';
 		
 		$pilihtabel = mysql_query("SELECT * FROM berita ORDER BY tanggal DESC");
-		
+		$c = 0;
 		while($row=mysql_fetch_array ($pilihtabel))
 		{
 			if(isset($_POST [$row['id']]))
@@ -20,13 +20,14 @@
 				}
 				mysql_query("DELETE FROM berita WHERE id='$temp'");
 			}
+			$c = $c + 1;
 		}
 		?>
 	</head>
 	<body>
 		<div class="wrapper" id="wrapper">
 			<?php include_once ('header.php');?>
-			<div class="container" style="height:600px">
+			<div class="container" style="height:<?php echo (200 + $c * 20)?>px">
 				<?php include_once('sidemenu.php');?>
 				<div class="section confmargin">
 					<div class="sectionheader bottomline">Admin Page | Edit News And Events</div>
@@ -42,11 +43,11 @@
 								</tr>
 								
 								<?php
-									require_once 'connect.php';
-									$pilihtabel=mysql_query("SELECT * FROM berita");
+									
+									$pilihtabel=mysql_query("SELECT * FROM berita ORDER BY tanggal DESC");
 									
 									
-									$i=0;
+									$cek=false;
 									while(($row=mysql_fetch_array($pilihtabel)))
 									{
 										
@@ -63,7 +64,11 @@
 										</td>
 										</tr> 
 										";  
+										$cek = true;
 									}
+									
+									if (!$cek)
+										echo "<tr><td colspan=5 align='center'>Tidak Ada News</td></tr>";
 							?>
 							</form>
 						</table>

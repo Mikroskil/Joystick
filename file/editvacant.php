@@ -13,6 +13,7 @@
 				$data['tipe'] = $row['type_kamar'];
 				$data['harga'] = $row['harga'];
 				$data['booked'] = $row['booked'];
+				$data['booked_code'] = $row['booked_code'];
 				$data['booked_fee'] = $row['booked_fee'];
 				$data['booked_date'] = $row['booked_date'];
 				$data['tidur1'] = $row['gambar_tidur1'];
@@ -99,11 +100,13 @@
 				if (isset($_POST['status']))
 				{
 					$booked = 1;
+					$booked_code = $data['booked_code'];
 					$tanggal = $data['booked_date'];
 				}
 				else
 				{
 					$booked = 0;
+					$booked_code = "";
 					$tanggal = "0000-00-00";
 				}
 					
@@ -239,6 +242,11 @@
 								<td wdith="100">Booked</td>
 								<td>:</td>
 								<td><input type="checkbox" name="status" <?php if ($data['booked'] != 0) echo "checked";?>></td>
+							</tr>
+							<tr>
+								<td wdith="100">Booked Code</td>
+								<td>:</td>
+								<td><input type="text" name="status" value ="<?php echo $data['booked_code'] ;?>" disabled></td>
 							</tr>
 							<tr>
 								<td wdith="100">Booked Date</td>

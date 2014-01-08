@@ -237,6 +237,36 @@ a:hover
 	width:270px;
 	margin:10px;
 }
+
+.booksec
+{
+	background-color:#0000FF;
+	color:#FFFFFF;
+	float:right;
+	width:330px;
+	margin-right:5px;
+	box-shadow: 0px 0px 5px #888888;
+}
+
+.bookseccon
+{
+	color:#FFFFFF;
+}
+
+.booksubsec
+{
+	margin-top:5px;
+	margin-bottom:5px;
+	
+}
+
+.booksecbutton
+{
+	width:50px;
+	height:30px;
+	background-color:#FFFFFF;
+	
+}
 /*End of main.html Section*/
 
 /*apartment.html Section*/
@@ -269,12 +299,15 @@ a:hover
 	height:250px;
 }
 
+.apartmentsecimgcon
+{
+	margin:10px 5px 10px 10px;
+	padding:5px;
+}
+
 .apartmentsecimg
 {
-	width:200px;
-	margin:10px 5px 10px 10px;
-	
-	padding:5px;
+	width:400px;
 	height:200px;
 }
 
@@ -310,8 +343,7 @@ a:hover
 /*apartmentdetail.html Section*/
 .apartementdetail
 {
-	width:430px;
-	height: 50px;
+	
 	float: left;
 	margin-left: 10px;
 	padding-top: 10px;
@@ -319,39 +351,27 @@ a:hover
 }
 .apartmentdetailheader
 {
-	width:400px;
+	width:320px;
 	padding:5px;
 	height:30px;
 	font-family:"Bodoni MT";
 	font-size:20pt;
 	font-style:italic;
-	margin-left: 10px;
 	
 }
-.apartmentdetailsec
+
+.apartementimg
 {
-	width:470px;
-	margin-right:10px;
-	margin-top:50px;
-	padding-top:5px;
-	height: 350px;
-	float: left;
+	width:400px;
+	margin-left: 10px;
+	height: 100px;
 }
 
-.apartementgambar
+.apartementimgheader
 {
-	width:940px;
-	margin-left: 10px;
-	height: 250px;
-}
-.apartementgambarheader
-{
-	width:940px;
-	margin-top: 10px;
-	margin-bottom: 10px;
-	margin-left: 10px;
+	width:580px;
 	height: 30px;
-	padding-top: 5px;
+	padding: 5px;
 	float: left;
 	font-family:"Bodoni MT";
 	font-size:20pt;
@@ -551,3 +571,19 @@ a:hover
 
 
 /*end of userinfo.php section*/
+
+
+/*editvacant.php section*/
+.editvacantimg
+{
+	width:150;
+	height:100;
+}
+/*end of editvacant.php section*/
+
+/*bookingvalid.php section*/
+.bookvalidsec
+{
+	width:900px; 
+}
+/*end of bookingvalid.php section*/

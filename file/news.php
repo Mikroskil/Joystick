@@ -37,7 +37,7 @@
 							{
 								echo "<img class='newsimg' src='../img/" . $berita[$i]['gambar']."'/>";
 							}
-							echo "<div class='newscon'>". $berita[$i]['isi'] . "</div></div>";
+							echo "<div class='newscon'>". str_replace("\n","<br>",$berita[$i]['isi']) . "</div></div>";
 						}
 						
 					?>

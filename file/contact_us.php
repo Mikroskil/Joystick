@@ -78,7 +78,7 @@
 								<tr valign="top">
 									<td>Message</td>
 									<td>:</td>
-									<td><textarea  name="message" cols="60" rows="20"></textarea></td>
+									<td><textarea  name="message" cols="60" rows="20" maxlength="200"></textarea></td>
 								</tr>
 								<tr>
 									<td colspan="3" align="right"><input type="reset" value="Reset"> &nbsp;&nbsp;&nbsp;<input type = "submit" name="send" value = "Send">

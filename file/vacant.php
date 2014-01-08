@@ -6,8 +6,25 @@
 	<body>
 		<div class="wrapper" id="wrapper">
 		<?php include_once ('header.php');?>
-		<?php include_once('sidemenu.php');?>
-		  <div class="container confmargin" style="height:900px">
+		<?php 
+			include_once('sidemenu.php');
+			require_once 'connect.php';
+			$pilihtabel=mysql_query("SELECT * FROM apartemen WHERE available <> 0");
+			
+			$c = 0;
+			while($row = mysql_fetch_array($pilihtabel))
+			{
+				$data[$c]['no'] = $row['no_kamar'];
+				$data[$c]['tipe'] = $row['type_kamar'];
+				$data[$c]['harga'] = $row['harga'];
+				$data[$c]['booked'] = $row['booked'];
+				$data[$c]['booked_fee'] = $row['booked_fee'];
+				$data[$c]['booked_date'] = $row['booked_date'];
+				$c=$c+1;
+			}
+		?>
+		
+		  <div class="container confmargin" style="height:<?php echo (110+$c*28);?>px">
 				<div class="section showapt">
 					<div class="sectionheader bottomline">
 						<b>Admin Page | Edit Vacant</b>
@@ -20,30 +37,27 @@
 						<th width='150'>Harga</th>
 						<th width='150'>Booked Fee</th>
 						<th>Booked</th>
+						<th>Booked Date</th>
 						<th>&nbsp;</th>
 						</tr>
 						<?php
-						require_once 'connect.php';
-						$pilihtabel=mysql_query("SELECT * FROM apartemen WHERE available <> 0");
+						
 							
 							$kosong = true;
-							while($row = mysql_fetch_array($pilihtabel))
+							for ($i = 0 ; $i < $c; $i++)
 							{
 							  echo "<tr align='center'>";
-							  echo "<form action='editvacant.php' method='get'><td><input type='text' size='1' name='no_kamar' readonly value='".$row['no_kamar']."'></td>";
-							  	echo "<td>" . $row['type_kamar'] . "</td>";
-							  echo "<td align='right'>Rp." . $row['harga'] . ",00</td>";
-							  echo "<td  align='right'>Rp." . $row['booked_fee'] . ",00</td>";
+							  echo "<td>" .$data[$i]['no']."</td>";
+							  	echo "<td>" . $data[$i]['tipe'] . "</td>";
+							  echo "<td align='right'>Rp." .$data[$i]['harga'] . ",00</td>";
+							  echo "<td  align='right'>Rp." . $data[$i]['booked_fee'] . ",00</td>";
 							  echo "<td><input type='checkbox' disabled='disabled' ";
-							  if ($row['booked'] == 1)
-							  	echo "checked";
-							
-								
-							  echo "></td>";
-							  
-	
-							  echo "<td><input type='submit' value='edit'></td>";
-							  echo "</form></tr>";
+							  if ($data[$i]['booked'] == 1)
+							  	echo "checked></td><td>". $data[$i]['booked_date'] ."</td>";
+							  else
+								echo "></td><td>-</td>";
+							  echo "<td><a href='editvacant.php?no_kamar=". $data[$i]['no'] . "'><input type='button' value='edit'></a></td>";
+							  echo "</tr>";
 							  $kosong = false;
 							 }
 							 if ($kosong)
@@ -51,7 +65,7 @@
 								echo "<tr><td colspan='3' align='center' valign='center'><b>Tidak Ada Apartemen Kosong!</b></td></tr>";
 							 }
 							?>
-							
+							 
 							</table>
 					</div>
 				</div>
