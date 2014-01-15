@@ -53,7 +53,7 @@
 	<body>
 		<div class="wrapper" id="wrapper">
 			<?php include_once ('header.php');?>
-			<div class="container" style="height:600px">
+			<div class="container" style="height:650px">
 				<?php include_once('sidemenu.php');?>
 				<div class="section confmargin">
 					<div class="sectionheader bottomline">Admin Page | Add News And Events</div>

@@ -164,11 +164,6 @@
 								<td valign="top" id="tipe_kamar"></td>
 							</tr>
 							<tr>
-								<td valign="top">Area</td>
-								<td valign="top">:</td>
-								<td valign="top">xx m<sup>2</sup></td>
-							</tr>
-							<tr>
 								<td valign="top">Status</td>
 								<td valign="top">:</td>
 								<td valign="top" id="status"></td>

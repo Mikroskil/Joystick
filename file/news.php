@@ -5,7 +5,7 @@
 		<?php
 			require_once 'connect.php';
 			
-			$pilihtabel = mysql_query("SELECT * FROM berita ORDER BY tanggal DESC");
+			$pilihtabel = mysql_query("SELECT * FROM berita ORDER BY tanggal, id DESC");
 			$berita = Array();
 			$n = 0;
 			while (($row = mysql_fetch_array($pilihtabel)) && ($n <9))

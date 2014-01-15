@@ -119,8 +119,8 @@
 								<td>
 									<form method="post">
 										<?php
-											if (($data['status'] != 0) & ($data['booked'] != 1))
-												echo "<input type='submit' name='booking' class='aptbookbutton' value='BOOK'>";
+											if ((($data['status'] != 0) & ($data['booked'] != 1)) & (!isset($_SESSION['login'])))
+												echo "<a href='bookingvalid.php?id=" . $data['id'] . "'><input name='booking' class='aptbookbutton' value='BOOK'></a>";
 										?>
 									</form>
 								</td>

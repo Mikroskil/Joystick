@@ -6,6 +6,7 @@
 		require_once 'connect.php';
 		$error="";
 		$pilihtabel=mysql_query("SELECT * FROM contact");
+		$c = 0;
 		while ($row = mysql_fetch_array($pilihtabel))
 			{
 				if (isset($_POST[$row['id']]))
@@ -14,6 +15,7 @@
 					mysql_query("DELETE FROM contact WHERE id='$temp'");
 					$error="Data berhasil dihapus!";
 				}
+				$c = $c + 1;
 			}
 		?>
 	</head>
@@ -21,7 +23,7 @@
 		<div class="wrapper" id="wrapper">
 			<?php include_once ('header.php');?>
 			<?php include_once('sidemenu.php');?>
-			<div class="container confmargin" style="height:900px">
+			<div class="container confmargin" style="height:<?php echo (250+$c*100)?>px">
 				<div class="section showapt">
 					<div class="sectionheader bottomline">
 						<b>Admin Page | Reply Contact Us</b>
@@ -54,11 +56,13 @@
 										<td> " . $row['id'] . "</td>
 										<td> " . $row['nama'] . "<br> (" . $row['email'] . ")</td>
 										<td> " . $row['subject'] . "</td>
-										<td> " . $row['message'] . "</td>
+										<td ><textarea cols='30' rows='5' readonly>" . $row['message'] . "</textarea></td>
 										<td align='center'><a href='mailto:" . $row['email'] . "?Subject=[REPLY]%20" . $row['subject'] . "' target='_top'><input type='button' value='Reply' name='reply' /></a><br />
 										<input type='submit' value='Delete' name='" . $row['id'] . "' /> 										
 										";
 									}
+									if ($i == 0)
+										echo "<tr><td>Tidak ada pesan konsumen</td></tr>";
 								?>
 								</form>
 						</table>
